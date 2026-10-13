@@ -28,7 +28,7 @@ dependencyResolutionManagement {
 }
 
 // build.gradle.kts del módulo (KMP: en commonMain.dependencies; Android: en dependencies)
-implementation("dev.seaglass:seaglass-compose:0.1.0")
+implementation("dev.seaglass:seaglass-compose:0.1.1")
 ```
 
 En macOS se publican todas las plataformas. En Linux o Windows se omiten las de iOS.
@@ -40,7 +40,7 @@ En macOS se publican todas las plataformas. En Linux o Windows se omiten las de 
 includeBuild("../sea-glass")
 ```
 
-Y la misma dependencia `dev.seaglass:seaglass-compose:0.1.0`. Gradle la sustituye por el código fuente.
+Y la misma dependencia `dev.seaglass:seaglass-compose:0.1.1`. Gradle la sustituye por el código fuente.
 
 ### Opción C · GitHub Packages
 

@@ -302,6 +302,7 @@ private fun FeedbackSection() = Section("Feedback") {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ContainersSection() = Section("Contenedores") {
     val c = SeaGlassTheme.colors
