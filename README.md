@@ -1,23 +1,20 @@
-# Sea Glass 0.2.0
+# Sea Glass
 
 Componentes Compose Multiplatform sobre Material 3: superficies esmeriladas, bordes iluminados, guijarros y presets Arena/Noche.
 
-**Versión preparada para revisión, todavía no publicada en Maven Central.**
+[Changelog](CHANGELOG.md) · [Migración desde 0.1.1](docs/MIGRATION.md)
 
-## Instalación local
+## Instalación
 
-```sh
-./gradlew :seaglass-compose:publishToMavenLocal :seaglass-haze:publishToMavenLocal
-```
-
-Añade `mavenLocal()`, `google()` y `mavenCentral()` al consumidor:
+Sea Glass está en Maven Central; no necesitas añadir repositorios extra (`google()` y `mavenCentral()` bastan).
 
 ```kotlin
+// build.gradle.kts del módulo (KMP: commonMain.dependencies; Android: dependencies)
 implementation("io.github.mariorsh.seaglass:seaglass-compose:0.2.0")
-implementation("io.github.mariorsh.seaglass:seaglass-haze:0.2.0") // opcional
+implementation("io.github.mariorsh.seaglass:seaglass-haze:0.2.0") // opcional: blur real con Haze
 ```
 
-También puedes usar `includeBuild("../sea-glass")` con esas coordenadas. Windows/Linux omiten los artefactos iOS: para un conjunto completo usa macOS. La configuración existente de GitHub Packages requiere las credenciales del propietario; no se garantiza que haya paquetes públicos allí.
+Plataformas: Android (minSdk 24), escritorio (JVM), web (Wasm) e iOS (`iosArm64`, `iosX64`, `iosSimulatorArm64`).
 
 ## Inicio rápido
 
@@ -74,7 +71,7 @@ Precedencia: Opaque fuerza alpha 1; después prevalece el color explícito (incl
 
 ### Haze opcional
 
-El módulo principal no depende de Haze. Se ha fijado Haze **1.5.3**, compilado por el proveedor con Kotlin 2.1.0 y Compose 1.7.3. Las firmas y capacidades se han consultado en el [código oficial](https://github.com/chrisbanes/haze/tree/1.5.3).
+El módulo principal no depende de Haze. `seaglass-haze` usa Haze **1.5.3**.
 
 ```kotlin
 @Composable
@@ -94,7 +91,7 @@ fun BlurExample() {
 }
 ```
 
-Imports: `dev.chrisbanes.haze.HazeState` y `io.github.mariorsh.seaglass.haze.*`. El ejemplo completo compilado está en `sample`.
+Imports: `dev.chrisbanes.haze.HazeState` y `io.github.mariorsh.seaglass.haze.*`. Hay un ejemplo completo en la app `sample` del repositorio.
 
 Fuente y efecto son **hermanos**: nunca captures el contenedor que contiene la propia superficie. La lista puede incluir sus tarjetas, pero el panel superpuesto queda fuera de la captura y su texto sigue nítido.
 
@@ -112,38 +109,18 @@ Drawer y side sheet usan `Dialog`, aislando el fondo y delegando al host foco mo
 
 `SeaGlassMotionConfig(reduced = true)` elimina los muelles/morphing decorativos y deja una forma de carga estática identificable. Compose aplica la escala de duración del host cuando está disponible; usa el control explícito para una preferencia uniforme entre plataformas.
 
-## Demo y documentación API
-
-```sh
-./gradlew :sample:installDebug
-./gradlew :sample:run
-./gradlew :sample:wasmJsBrowserDevelopmentRun
-./gradlew :sample:wasmJsBrowserDistribution
-./gradlew :sample:linkDebugFrameworkIosSimulatorArm64 # macOS
-./gradlew :seaglass-compose:desktopTest apiCheck
-./gradlew :seaglass-compose:dokkaHtml :seaglass-haze:dokkaHtml
-```
-
-Si hay varios Android, instala el APK con `adb -s SERIAL install -r sample/build/outputs/apk/debug/sample-debug.apk`. La galería está en `sample`, fuera del artefacto de producción. Incluye catálogo, formulario local, modales, 200 tarjetas y controles para Noche, marca, RTL, fuente al 200%, movimiento reducido y tres modos de superficie. No necesita backend.
-
-iOS: integra `SeaGlassSample.framework` en tu app Xcode y presenta `MainViewControllerKt.MainViewController()` mediante el wrapper Swift de `sample/iosApp/SeaGlassView.swift`. Requiere macOS, Xcode, un host y firma propios; no se incluye un proyecto Xcode generado.
-
-## Compatibilidad y límites
+## Compatibilidad
 
 | Pieza | Versión / destino |
 |---|---|
 | Kotlin / Compose Multiplatform | 2.1.21 / 1.8.2 |
-| AGP / Gradle | 8.7.3 / 8.14.3; JDK 17+ |
-| Android | minSdk 24; compile/target de demo 35; blur conservador API 32+ |
-| Escritorio | JVM; validación local en Windows |
-| Web | Wasm; blur sujeto a renderer y navegador; fallback disponible |
-| Apple | iosX64, iosArm64, iosSimulatorArm64; validación requiere macOS |
-| Haze opcional | 1.5.3 |
-| API / documentación | Binary Compatibility Validator 0.17.0 / Dokka 1.9.20 |
+| Android | minSdk 24; blur a partir de API 32 (en versiones anteriores se usa el relleno legible) |
+| Escritorio | JVM |
+| Web | Wasm; el blur depende del renderer y del navegador, con relleno de reserva |
+| Apple | iosX64, iosArm64, iosSimulatorArm64 |
+| Haze (opcional) | 1.5.3 |
 
-La compatibilidad de compilación no sustituye la validación visual de cada renderer. No se han medido mejoras de rendimiento. Se conservan los modificadores `composed` para resolver el tema y construir modificadores de terceros; no hay evidencia que justifique sustituirlos por Node. Se almacenan pinceles/paths y el progreso se lee en dibujo/semánticas, fuera de composición.
-
-Consulta [migración](docs/MIGRATION.md), [validación y matriz visual](docs/VALIDATION.md), [publicación](docs/PUBLISHING.md) y [changelog](CHANGELOG.md).
+Consulta también la [guía de migración](docs/MIGRATION.md) y el [changelog](CHANGELOG.md). Si quieres contribuir o compilar la librería, mira [DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
 ## Licencia
 
