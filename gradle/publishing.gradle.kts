@@ -1,4 +1,6 @@
 import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.api.publish.maven.tasks.PublishToMavenRepository
+import org.gradle.plugins.signing.Sign
 import org.gradle.plugins.signing.SigningExtension
 
 val docs = tasks.register<Jar>("javadocJar") {
@@ -39,6 +41,10 @@ configure<SigningExtension> {
         useInMemoryPgpKeys(key, System.getenv("SIGNING_PASSWORD"))
         sign(project.extensions.getByType<PublishingExtension>().publications)
     }
+}
+// KMP publications share signature outputs; make every publish task wait for all signing tasks.
+tasks.withType<PublishToMavenRepository>().configureEach {
+    dependsOn(tasks.withType<Sign>())
 }
 tasks.register("validateReleasePrerequisites") {
     doLast {
