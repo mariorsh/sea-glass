@@ -6,8 +6,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    `maven-publish`
-    signing
+    id("com.vanniktech.maven.publish")
     id("org.jetbrains.dokka")
 }
 

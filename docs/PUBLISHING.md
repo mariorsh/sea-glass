@@ -36,18 +36,19 @@ The current group is staged under `io/github/mariorsh/seaglass/`. Validation and
 the Central bundle select only the configured GROUP; older staged groups are not
 included in the bundle.
 
-## External steps before Central
+## Automated release
 
-1. Choose the code license and verify the namespace in the owner's Central account.
-2. On macOS, configure `SIGNING_KEY` (ASCII armored private key), `SIGNING_PASSWORD`
-   and `CENTRAL_NAMESPACE_VERIFIED` (the verified namespace, typically `io.github.mariorsh`,
-   or the exact GROUP) in the environment or CI secrets.
-   Publish the corresponding public signing key to a public key server.
-3. Run `validateReleasePrerequisites` for both libraries, then stage every publication
-   with the license properties. Signatures are created only when SIGNING_KEY is present.
-4. Run `prepareCentralBundle` for a guarded zip including Maven checksums and signatures.
-5. Upload that bundle manually to Central Portal for validation and inspection. This
-   repository does not automatically upload, release, tag, or merge anything.
+Pushing a tag `vX.Y.Z` that matches `VERSION_NAME` runs `.github/workflows/release.yml`
+on macOS, which tests, checks the API and runs `publishAndReleaseToMavenCentral`
+(com.vanniktech.maven.publish). The job uses the `release` GitHub environment; add
+required reviewers there for manual approval.
 
-Central account credentials belong only in the portal or secret environment; they
-are never embedded in source or POMs. Do not upload unsigned or partial staging output.
+Required repository/environment secrets:
+
+- `MAVEN_CENTRAL_USERNAME` / `MAVEN_CENTRAL_PASSWORD`: Central Portal user token.
+- `SIGNING_KEY` (ASCII armored private key) / `SIGNING_PASSWORD`. Publish the public
+  key to a public key server.
+
+The namespace `io.github.mariorsh` must be verified in Central Portal. Central versions
+are immutable: a failed release needs a new version. For a manual upload use
+`./gradlew publishToMavenCentral` (without `AndRelease`) and release from the portal.

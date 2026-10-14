@@ -1,3 +1,7 @@
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.KotlinMultiplatform
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.composeCompiler) apply false
@@ -6,6 +10,7 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.17.0"
     id("org.jetbrains.dokka") version "1.9.20" apply false
+    id("com.vanniktech.maven.publish") version "0.34.0" apply false
 }
 
 allprojects {
@@ -13,6 +18,42 @@ allprojects {
     version = providers.gradleProperty("VERSION_NAME").get()
 }
 apiValidation { ignoredProjects.add("sample") }
+
+// Release: ./gradlew publishAndReleaseToMavenCentral (see .github/workflows/release.yml).
+// Credentials/signing come from ORG_GRADLE_PROJECT_mavenCentralUsername, ...Password,
+// signingInMemoryKey, signingInMemoryKeyPassword.
+subprojects {
+    plugins.withId("com.vanniktech.maven.publish") {
+        extensions.configure<MavenPublishBaseExtension> {
+            configure(
+                KotlinMultiplatform(
+                    javadocJar = JavadocJar.Dokka("dokkaHtml"),
+                    sourcesJar = true,
+                    androidVariantsToPublish = listOf("release"),
+                )
+            )
+            publishToMavenCentral()
+            if (providers.gradleProperty("signingInMemoryKey").isPresent) signAllPublications()
+
+            pom {
+                name.set(project.name)
+                description.set("Sea Glass components for Compose Multiplatform")
+                url.set("https://github.com/mariorsh/sea-glass")
+                developers { developer { id.set("mariorsh"); name.set("Mario Rios Holgado"); url.set("https://github.com/mariorsh") } }
+                scm {
+                    url.set("https://github.com/mariorsh/sea-glass")
+                    connection.set("scm:git:https://github.com/mariorsh/sea-glass.git")
+                    developerConnection.set("scm:git:ssh://git@github.com/mariorsh/sea-glass.git")
+                }
+                val licenseName = providers.gradleProperty("releaseLicenseName")
+                val licenseUrl = providers.gradleProperty("releaseLicenseUrl")
+                if (licenseName.isPresent && licenseUrl.isPresent) {
+                    licenses { license { name.set(licenseName); url.set(licenseUrl) } }
+                }
+            }
+        }
+    }
+}
 
 tasks.register("validateLocalPublication") {
     description = "Validate staged POMs, documentation, sources, metadata and font notices without releasing."
@@ -41,35 +82,6 @@ tasks.register("validateLocalPublication") {
                 check(zip.getEntry("META-INF/licenses/$it") != null) { "Missing font notice $it" }
             }
         }
-        logger.lifecycle("Staged metadata, sources, documentation and font notices verified. Central release still requires owner license and verified namespace.")
-    }
-}
-
-tasks.register<Zip>("prepareCentralBundle") {
-    dependsOn("validateLocalPublication")
-    dependsOn(":seaglass-compose:validateReleasePrerequisites", ":seaglass-haze:validateReleasePrerequisites")
-    dependsOn(":seaglass-compose:publishAllPublicationsToStagingRepository", ":seaglass-haze:publishAllPublicationsToStagingRepository")
-    archiveFileName.set("sea-glass-${project.version}-central.zip")
-    destinationDirectory.set(layout.buildDirectory.dir("central"))
-    val groupPath = project.group.toString().replace('.', '/')
-    from(layout.buildDirectory.dir("staging-repository/$groupPath")) { into(groupPath) }
-    exclude("**/maven-metadata.xml*")
-    doFirst {
-        val repo = layout.buildDirectory.dir("staging-repository").get().asFile.resolve(groupPath)
-        val files = repo.walkTopDown().filter { it.isFile }.toList()
-        listOf("seaglass-compose", "seaglass-haze").forEach { module ->
-            listOf("iosarm64", "iosx64", "iossimulatorarm64", "android", "desktop", "wasm-js").forEach { target ->
-                check(files.any { it.name == "$module-$target-${project.version}.pom" }) { "Missing $module $target publication" }
-            }
-        }
-        files.filter { it.extension in setOf("pom", "jar", "aar", "klib", "module") }.forEach {
-            check(java.io.File(it.path + ".asc").isFile) { "Unsigned artifact: $it" }
-        }
-        files.filter { it.extension !in setOf("md5", "sha1", "sha256", "sha512") }.forEach { artifact ->
-            listOf("MD5" to "md5", "SHA-1" to "sha1").forEach { (algorithm, suffix) ->
-                val digest = java.security.MessageDigest.getInstance(algorithm).digest(artifact.readBytes())
-                java.io.File(artifact.path + ".$suffix").writeText(digest.joinToString("") { "%02x".format(it) })
-            }
-        }
+        logger.lifecycle("Staged metadata, sources, documentation and font notices verified.")
     }
 }
