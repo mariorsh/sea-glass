@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0 — unreleased
+## 0.2.0 — 2026-10-14
 
 - Move the Maven group and core Android namespace to `io.github.mariorsh.seaglass`.
   Kotlin packages use `.compose`/`.haze`, and the sample uses `.sample`.
