@@ -7,10 +7,11 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     `maven-publish`
+    signing
+    id("org.jetbrains.dokka")
 }
 
-group = "dev.seaglass"
-version = "0.1.1"
+apply(from = rootProject.file("gradle/publishing.gradle.kts"))
 
 kotlin {
     androidTarget {
@@ -32,6 +33,13 @@ kotlin {
     }
 
     sourceSets {
+        commonTest.dependencies { implementation(kotlin("test")) }
+        val desktopTest by getting {
+            dependencies {
+                implementation(compose.desktop.uiTestJUnit4)
+                implementation(compose.desktop.currentOs)
+            }
+        }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -45,7 +53,8 @@ kotlin {
 }
 
 android {
-    namespace = "dev.seaglass.compose"
+    namespace = "io.github.mariorsh.seaglass"
+    sourceSets["main"].assets.srcDir(rootProject.file("licenses"))
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -58,7 +67,7 @@ android {
 
 compose.resources {
     publicResClass = false
-    packageOfResClass = "dev.seaglass.compose.resources"
+    packageOfResClass = "io.github.mariorsh.seaglass.compose.resources"
     generateResClass = always
 }
 

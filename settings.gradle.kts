@@ -28,3 +28,4 @@ dependencyResolutionManagement {
 }
 
 include(":seaglass-compose")
+include(":seaglass-haze", ":sample")
