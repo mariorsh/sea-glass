@@ -144,3 +144,7 @@ iOS: integra `SeaGlassSample.framework` en tu app Xcode y presenta `MainViewCont
 La compatibilidad de compilación no sustituye la validación visual de cada renderer. No se han medido mejoras de rendimiento. Se conservan los modificadores `composed` para resolver el tema y construir modificadores de terceros; no hay evidencia que justifique sustituirlos por Node. Se almacenan pinceles/paths y el progreso se lee en dibujo/semánticas, fuera de composición.
 
 Consulta [migración](docs/MIGRATION.md), [validación y matriz visual](docs/VALIDATION.md), [publicación](docs/PUBLISHING.md) y [changelog](CHANGELOG.md).
+
+## Licencia
+
+El código se distribuye bajo [Apache License 2.0](LICENSE). Las fuentes incluidas (Bricolage Grotesque, Figtree y JetBrains Mono) se distribuyen bajo SIL Open Font License; consulta sus textos en [`licenses/`](licenses/).
