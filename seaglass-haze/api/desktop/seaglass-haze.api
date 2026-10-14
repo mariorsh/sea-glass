@@ -1,0 +1,5 @@
+public final class io/github/mariorsh/seaglass/haze/SeaGlassHazeKt {
+	public static final fun rememberHazeBackdrop (Ldev/chrisbanes/haze/HazeState;ZLandroidx/compose/runtime/Composer;II)Lio/github/mariorsh/seaglass/compose/GlassBackdrop;
+	public static final fun seaGlassHazeSource (Landroidx/compose/ui/Modifier;Ldev/chrisbanes/haze/HazeState;)Landroidx/compose/ui/Modifier;
+}
+

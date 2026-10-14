@@ -1,0 +1,755 @@
+public final class io/github/mariorsh/seaglass/compose/ButtonsKt {
+	public static final fun SgButton (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgButtonStyle;Lio/github/mariorsh/seaglass/compose/SgButtonSize;ZZLandroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgButton (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgButtonStyle;Lio/github/mariorsh/seaglass/compose/SgButtonSize;ZZLandroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgButtonGroup (Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgConnectedButtonGroup-FJfuzF0 (Ljava/util/List;ILkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;FLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgConnectedButtonGroupMulti-FJfuzF0 (Ljava/util/List;Ljava/util/Set;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;FLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgIconButton-gMokZ80 (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;ZLandroidx/compose/ui/graphics/Color;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgIconToggleButton (ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgSegmentedButtons (Ljava/util/List;ILkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSplitButton (Ljava/lang/String;Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgButtonStyle;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgToggleButton (ZLkotlin/jvm/functions/Function1;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/ui/graphics/vector/ImageVector;Lio/github/mariorsh/seaglass/compose/SgButtonSize;ZLandroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/ChipsKt {
+	public static final fun SgAssistChip (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;ZZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgAvatar-aWONUgI (Ljava/lang/String;Landroidx/compose/ui/Modifier;FJJLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgFilterChip (Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgInputChip (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSuggestionChip (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/ColorKt {
+	public static final fun getLocalSeaGlassColors ()Landroidx/compose/runtime/ProvidableCompositionLocal;
+	public static final fun seaGlassDarkColorScheme ()Landroidx/compose/material3/ColorScheme;
+	public static final fun seaGlassDarkColors ()Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public static final fun seaGlassLightColorScheme ()Landroidx/compose/material3/ColorScheme;
+	public static final fun seaGlassLightColors ()Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$ContainersKt {
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$ContainersKt;
+	public fun <init> ()V
+	public final fun getLambda$1977070208$seaglass_compose ()Lkotlin/jvm/functions/Function3;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$FabKt {
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$FabKt;
+	public fun <init> ()V
+	public final fun getLambda$2123591699$seaglass_compose ()Lkotlin/jvm/functions/Function3;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$FeedbackKt {
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$FeedbackKt;
+	public fun <init> ()V
+	public final fun getLambda$544645599$seaglass_compose ()Lkotlin/jvm/functions/Function3;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$InputsKt {
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$InputsKt;
+	public fun <init> ()V
+	public final fun getLambda$1814103482$seaglass_compose ()Lkotlin/jvm/functions/Function2;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$NavigationKt {
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$NavigationKt;
+	public fun <init> ()V
+	public final fun getLambda$846200593$seaglass_compose ()Lkotlin/jvm/functions/Function3;
+}
+
+public final class io/github/mariorsh/seaglass/compose/ContainersKt {
+	public static final fun SgCard (Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgCardVariant;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgCardActions (Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/layout/Arrangement$Horizontal;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgCardBody (Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgCarouselTile-3IgeMak (Landroidx/compose/foundation/layout/BoxScope;JLjava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgDivider (Landroidx/compose/ui/Modifier;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgListIcon (Landroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgListItem (Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgListMeta (Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
+	public static final fun SgMedia-2lQALUM (Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;Landroidx/compose/ui/unit/Dp;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgMultiBrowseCarousel-vz2T9sI (ILandroidx/compose/ui/Modifier;FFLkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSegmentedListItem (Ljava/lang/String;IILandroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgUncontainedCarousel-vz2T9sI (ILandroidx/compose/ui/Modifier;FFLkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/DialogsKt {
+	public static final fun SgAlertDialog (Lkotlin/jvm/functions/Function0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/graphics/vector/ImageVector;ZLandroidx/compose/ui/window/DialogProperties;Landroidx/compose/runtime/Composer;III)V
+	public static final fun SgFullScreenDialog (Lkotlin/jvm/functions/Function0;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Ljava/lang/String;Landroidx/compose/ui/window/DialogProperties;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgModalBottomSheet (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/material3/SheetState;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgModalSideSheet (ZLkotlin/jvm/functions/Function0;Ljava/lang/String;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSheetAction (Landroidx/compose/foundation/layout/RowScope;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ZLandroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/FabKt {
+	public static final fun SgExtendedFab (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgFabSize;Lio/github/mariorsh/seaglass/compose/SgFabColor;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgFab (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgFabSize;Lio/github/mariorsh/seaglass/compose/SgFabColor;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgFabMenu (ZLkotlin/jvm/functions/Function1;Ljava/util/List;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/FeedbackKt {
+	public static final fun SgCircularProgress--ukhzSk (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;FZZJLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgDropdownMenu (ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgLinearProgress-yrwZFoE (Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZZJLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgLinearProgressIndeterminate-FNF3uiM (Landroidx/compose/ui/Modifier;ZJLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgLoadingIndicator-cf5BqRc (Landroidx/compose/ui/Modifier;ZJLjava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgMenuGroup (Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgMenuItem (Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;ZZZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgPlainTooltip (Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgRichTooltip (Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgRichTooltipBox (Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSnackbar (Ljava/lang/String;Landroidx/compose/ui/Modifier;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSnackbarHost (Landroidx/compose/material3/SnackbarHostState;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgTooltipBox (Ljava/lang/String;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+}
+
+public abstract interface class io/github/mariorsh/seaglass/compose/GlassBackdrop {
+	public static final field Companion Lio/github/mariorsh/seaglass/compose/GlassBackdrop$Companion;
+	public abstract fun isBlurAvailable ()Z
+	public abstract fun modifier (Landroidx/compose/ui/graphics/Shape;Lio/github/mariorsh/seaglass/compose/GlassLevel;)Landroidx/compose/ui/Modifier;
+}
+
+public final class io/github/mariorsh/seaglass/compose/GlassBackdrop$Companion {
+	public final fun available (Lio/github/mariorsh/seaglass/compose/GlassBackdrop;)Lio/github/mariorsh/seaglass/compose/GlassBackdrop;
+	public final fun getNone ()Lio/github/mariorsh/seaglass/compose/GlassBackdrop;
+}
+
+public final class io/github/mariorsh/seaglass/compose/GlassBackdrop$DefaultImpls {
+	public static fun isBlurAvailable (Lio/github/mariorsh/seaglass/compose/GlassBackdrop;)Z
+}
+
+public final class io/github/mariorsh/seaglass/compose/GlassKt {
+	public static final fun frost-bw27NRU (Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+	public static final fun getLocalGlassBackdrop ()Landroidx/compose/runtime/ProvidableCompositionLocal;
+	public static final fun glass-gP2Z1ig (Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Lio/github/mariorsh/seaglass/compose/GlassLevel;Landroidx/compose/ui/graphics/Color;)Landroidx/compose/ui/Modifier;
+	public static synthetic fun glass-gP2Z1ig$default (Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Lio/github/mariorsh/seaglass/compose/GlassLevel;Landroidx/compose/ui/graphics/Color;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+	public static final fun glassPanel (Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+	public static synthetic fun glassPanel$default (Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+	public static final fun pebble-fOGDGlw (Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;F)Landroidx/compose/ui/Modifier;
+	public static synthetic fun pebble-fOGDGlw$default (Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;FILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+	public static final fun pressedPebble-bw27NRU (Landroidx/compose/ui/Modifier;JLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
+}
+
+public final class io/github/mariorsh/seaglass/compose/GlassLevel : java/lang/Enum {
+	public static final field Level0 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static final field Level1 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static final field Level2 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static final field Level3 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static final field Level4 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static final field Level5 Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public final fun getAlpha ()F
+	public final fun getBlur-D9Ej5fM ()F
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getShadow-D9Ej5fM ()F
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/GlassLevel;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/GlassLevel;
+}
+
+public final class io/github/mariorsh/seaglass/compose/GlassSurfacePolicy : java/lang/Enum {
+	public static final field Auto Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public static final field Blur Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public static final field Opaque Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+}
+
+public final class io/github/mariorsh/seaglass/compose/InputsKt {
+	public static final fun SgCheckbox (ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgRadioButton (ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgRangeSlider (Lkotlin/ranges/ClosedFloatingPointRange;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/ranges/ClosedFloatingPointRange;ILio/github/mariorsh/seaglass/compose/SgSliderSize;Lio/github/mariorsh/seaglass/compose/SgSliderColor;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgSlider (FLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/ranges/ClosedFloatingPointRange;ILio/github/mariorsh/seaglass/compose/SgSliderSize;Lio/github/mariorsh/seaglass/compose/SgSliderColor;Landroidx/compose/ui/graphics/vector/ImageVector;ZLkotlin/jvm/functions/Function1;ZLkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;III)V
+	public static final fun SgSwitch (ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgTextField (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgTextFieldVariant;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function2;Ljava/lang/String;Ljava/lang/String;ZZZZLandroidx/compose/foundation/text/KeyboardOptions;Landroidx/compose/foundation/text/KeyboardActions;Landroidx/compose/ui/text/input/VisualTransformation;Landroidx/compose/runtime/Composer;III)V
+	public static final fun SgTriStateCheckbox (Landroidx/compose/ui/state/ToggleableState;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZZLandroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/NavigationKt {
+	public static final fun SgBadge (Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgBadgedBox (Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgDrawerHeadline (Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
+	public static final fun SgDrawerSectionLabel (Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
+	public static final fun SgModalNavigationDrawer (ZLkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgNavigationBar (Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgNavigationBarItem (Landroidx/compose/foundation/layout/RowScope;ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgNavigationRail (Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgNavigationRailItem (ZLkotlin/jvm/functions/Function0;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSearchAppBar (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSearchBar (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgSearchView (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Ljava/lang/String;Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgTabRow (Ljava/util/List;ILkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgTabVariant;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgToolbar (Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;ZLkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgToolbarItem (Landroidx/compose/ui/graphics/vector/ImageVector;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgTopAppBar (Ljava/lang/String;Landroidx/compose/ui/Modifier;Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/PickersKt {
+	public static final fun SgDatePicker (Landroidx/compose/material3/DatePickerState;Landroidx/compose/ui/Modifier;ZLandroidx/compose/runtime/Composer;II)V
+	public static final fun SgDatePickerDialog (Landroidx/compose/material3/DatePickerState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgDateRangePickerDialog (Landroidx/compose/material3/DateRangePickerState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SgTimePickerDialog (Landroidx/compose/material3/TimePickerState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;II)V
+	public static final fun sgDatePickerColors (Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/DatePickerColors;
+	public static final fun sgTimePickerColors (Landroidx/compose/runtime/Composer;I)Landroidx/compose/material3/TimePickerColors;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassColors {
+	public static final field $stable I
+	public synthetic fun <init> (JJJJJJJJJJJJJJJJJJJZLkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1-0d7_KjU ()J
+	public final fun component10-0d7_KjU ()J
+	public final fun component11-0d7_KjU ()J
+	public final fun component12-0d7_KjU ()J
+	public final fun component13-0d7_KjU ()J
+	public final fun component14-0d7_KjU ()J
+	public final fun component15-0d7_KjU ()J
+	public final fun component16-0d7_KjU ()J
+	public final fun component17-0d7_KjU ()J
+	public final fun component18-0d7_KjU ()J
+	public final fun component19-0d7_KjU ()J
+	public final fun component2-0d7_KjU ()J
+	public final fun component20 ()Z
+	public final fun component3-0d7_KjU ()J
+	public final fun component4-0d7_KjU ()J
+	public final fun component5-0d7_KjU ()J
+	public final fun component6-0d7_KjU ()J
+	public final fun component7-0d7_KjU ()J
+	public final fun component8-0d7_KjU ()J
+	public final fun component9-0d7_KjU ()J
+	public final fun copy-shdUIGg (JJJJJJJJJJJJJJJJJJJZ)Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public static synthetic fun copy-shdUIGg$default (Lio/github/mariorsh/seaglass/compose/SeaGlassColors;JJJJJJJJJJJJJJJJJJJZILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAmber-0d7_KjU ()J
+	public final fun getAqua-0d7_KjU ()J
+	public final fun getCobalt-0d7_KjU ()J
+	public final fun getCoral-0d7_KjU ()J
+	public final fun getDisabledContainer-0d7_KjU ()J
+	public final fun getDisabledContent-0d7_KjU ()J
+	public final fun getFocusRing-0d7_KjU ()J
+	public final fun getGlass-0d7_KjU ()J
+	public final fun getGlassBar-0d7_KjU ()J
+	public final fun getGlassEdge-0d7_KjU ()J
+	public final fun getGlassHighlight-0d7_KjU ()J
+	public final fun getGround-0d7_KjU ()J
+	public final fun getInkMuted-0d7_KjU ()J
+	public final fun getLavender-0d7_KjU ()J
+	public final fun getPrimaryContainerGlass-0d7_KjU ()J
+	public final fun getPrimaryHover-0d7_KjU ()J
+	public final fun getPrimaryPressed-0d7_KjU ()J
+	public final fun getSeafoam-0d7_KjU ()J
+	public final fun getShadow-0d7_KjU ()J
+	public fun hashCode ()I
+	public final fun isDark ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassCorners {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassCorners;
+	public final fun getExtraExtraLarge-D9Ej5fM ()F
+	public final fun getExtraLarge-D9Ej5fM ()F
+	public final fun getExtraLargeIncreased-D9Ej5fM ()F
+	public final fun getExtraSmall-D9Ej5fM ()F
+	public final fun getFull ()Landroidx/compose/foundation/shape/RoundedCornerShape;
+	public final fun getLarge-D9Ej5fM ()F
+	public final fun getLargeIncreased-D9Ej5fM ()F
+	public final fun getMedium-D9Ej5fM ()F
+	public final fun getNone-D9Ej5fM ()F
+	public final fun getSmall-D9Ej5fM ()F
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassFonts {
+	public static final field $stable I
+	public fun <init> (Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;)V
+	public final fun component1 ()Landroidx/compose/ui/text/font/FontFamily;
+	public final fun component2 ()Landroidx/compose/ui/text/font/FontFamily;
+	public final fun component3 ()Landroidx/compose/ui/text/font/FontFamily;
+	public final fun copy (Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;)Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/ui/text/font/FontFamily;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Landroidx/compose/ui/text/font/FontFamily;
+	public final fun getDisplay ()Landroidx/compose/ui/text/font/FontFamily;
+	public final fun getMono ()Landroidx/compose/ui/text/font/FontFamily;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassMotion {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassMotion;
+	public final fun effectsDefault ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun effectsFast ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun effectsSlow ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun spatialDefault ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun spatialFast ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun spatialSlow ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassMotionConfig {
+	public static final field $stable I
+	public fun <init> ()V
+	public fun <init> (Z)V
+	public synthetic fun <init> (ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun copy (Z)Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;ZILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;
+	public final fun effectsDefault ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun effectsFast ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun effectsSlow ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReduced ()Z
+	public fun hashCode ()I
+	public final fun spatialDefault ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun spatialFast ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public final fun spatialSlow ()Landroidx/compose/animation/core/FiniteAnimationSpec;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassPalette {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassPalette;
+	public final fun getError-0d7_KjU ()J
+	public final fun getErrorContainer-0d7_KjU ()J
+	public final fun getErrorContainerDark-0d7_KjU ()J
+	public final fun getErrorDark-0d7_KjU ()J
+	public final fun getGround-0d7_KjU ()J
+	public final fun getGroundDark-0d7_KjU ()J
+	public final fun getInk-0d7_KjU ()J
+	public final fun getInkDark-0d7_KjU ()J
+	public final fun getInkMuted-0d7_KjU ()J
+	public final fun getInkMutedDark-0d7_KjU ()J
+	public final fun getInkVariant-0d7_KjU ()J
+	public final fun getInkVariantDark-0d7_KjU ()J
+	public final fun getInverseOnSurface-0d7_KjU ()J
+	public final fun getInverseOnSurfaceDark-0d7_KjU ()J
+	public final fun getInversePrimary-0d7_KjU ()J
+	public final fun getInversePrimaryDark-0d7_KjU ()J
+	public final fun getInverseSurface-0d7_KjU ()J
+	public final fun getInverseSurfaceDark-0d7_KjU ()J
+	public final fun getOnError-0d7_KjU ()J
+	public final fun getOnErrorContainer-0d7_KjU ()J
+	public final fun getOnErrorContainerDark-0d7_KjU ()J
+	public final fun getOnErrorDark-0d7_KjU ()J
+	public final fun getOnPrimary-0d7_KjU ()J
+	public final fun getOnPrimaryContainer-0d7_KjU ()J
+	public final fun getOnPrimaryContainerDark-0d7_KjU ()J
+	public final fun getOnPrimaryDark-0d7_KjU ()J
+	public final fun getOnSecondary-0d7_KjU ()J
+	public final fun getOnSecondaryContainer-0d7_KjU ()J
+	public final fun getOnSecondaryContainerDark-0d7_KjU ()J
+	public final fun getOnSecondaryDark-0d7_KjU ()J
+	public final fun getOnTertiary-0d7_KjU ()J
+	public final fun getOnTertiaryContainer-0d7_KjU ()J
+	public final fun getOnTertiaryContainerDark-0d7_KjU ()J
+	public final fun getOnTertiaryDark-0d7_KjU ()J
+	public final fun getOutline-0d7_KjU ()J
+	public final fun getOutlineDark-0d7_KjU ()J
+	public final fun getPrimary-0d7_KjU ()J
+	public final fun getPrimaryContainer-0d7_KjU ()J
+	public final fun getPrimaryContainerDark-0d7_KjU ()J
+	public final fun getPrimaryDark-0d7_KjU ()J
+	public final fun getSecondary-0d7_KjU ()J
+	public final fun getSecondaryContainer-0d7_KjU ()J
+	public final fun getSecondaryContainerDark-0d7_KjU ()J
+	public final fun getSecondaryDark-0d7_KjU ()J
+	public final fun getSurface-0d7_KjU ()J
+	public final fun getSurfaceContainer-0d7_KjU ()J
+	public final fun getSurfaceContainerDark-0d7_KjU ()J
+	public final fun getSurfaceDark-0d7_KjU ()J
+	public final fun getSurfaceHigh-0d7_KjU ()J
+	public final fun getSurfaceHighDark-0d7_KjU ()J
+	public final fun getSurfaceHighest-0d7_KjU ()J
+	public final fun getSurfaceHighestDark-0d7_KjU ()J
+	public final fun getSurfaceLow-0d7_KjU ()J
+	public final fun getSurfaceLowDark-0d7_KjU ()J
+	public final fun getSurfaceLowest-0d7_KjU ()J
+	public final fun getSurfaceLowestDark-0d7_KjU ()J
+	public final fun getTertiary-0d7_KjU ()J
+	public final fun getTertiaryContainer-0d7_KjU ()J
+	public final fun getTertiaryContainerDark-0d7_KjU ()J
+	public final fun getTertiaryDark-0d7_KjU ()J
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassShapes {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassShapes;
+	public final fun getAll ()Ljava/util/List;
+	public final fun getArch ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getCircle ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getClover4 ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getCookie4 ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getCookie9 ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getFlower8 ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getGem ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getPill ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getSoftBurst ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getSunny ()Landroidx/compose/ui/graphics/Shape;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassSpacing {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassSpacing;
+	public final fun getS1-D9Ej5fM ()F
+	public final fun getS12-D9Ej5fM ()F
+	public final fun getS16-D9Ej5fM ()F
+	public final fun getS2-D9Ej5fM ()F
+	public final fun getS3-D9Ej5fM ()F
+	public final fun getS4-D9Ej5fM ()F
+	public final fun getS5-D9Ej5fM ()F
+	public final fun getS6-D9Ej5fM ()F
+	public final fun getS7-D9Ej5fM ()F
+	public final fun getS8-D9Ej5fM ()F
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassStrings {
+	public static final field $stable I
+	public static final field Companion Lio/github/mariorsh/seaglass/compose/SeaGlassStrings$Companion;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component10 ()Ljava/lang/String;
+	public final fun component11 ()Ljava/lang/String;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Ljava/lang/String;
+	public final fun component7 ()Ljava/lang/String;
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBack ()Ljava/lang/String;
+	public final fun getCancel ()Ljava/lang/String;
+	public final fun getClear ()Ljava/lang/String;
+	public final fun getClearSearch ()Ljava/lang/String;
+	public final fun getClose ()Ljava/lang/String;
+	public final fun getCloseWithoutSaving ()Ljava/lang/String;
+	public final fun getConfirm ()Ljava/lang/String;
+	public final fun getCreate ()Ljava/lang/String;
+	public final fun getLoading ()Ljava/lang/String;
+	public final fun getMoreOptions ()Ljava/lang/String;
+	public final fun getRemove ()Ljava/lang/String;
+	public final fun getSearch ()Ljava/lang/String;
+	public final fun getSelectTime ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassStrings$Companion {
+	public final fun getEnglish ()Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public final fun getSpanish ()Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle {
+	public static final field $stable I
+	public synthetic fun <init> (Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public synthetic fun <init> (Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public final fun component2 ()Z
+	public final fun component3 ()F
+	public final fun component4 ()F
+	public final fun component5 ()F
+	public final fun component6-D9Ej5fM ()F
+	public final fun component7 ()F
+	public final fun component8 ()F
+	public final fun component9 ()Landroidx/compose/ui/graphics/Shape;
+	public final fun copy-HYR8e34 (Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;)Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;
+	public static synthetic fun copy-HYR8e34$default (Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBorderWidth-D9Ej5fM ()F
+	public final fun getFallbackAlpha ()F
+	public final fun getForceFallback ()Z
+	public final fun getHighlightMultiplier ()F
+	public final fun getOpacityMultiplier ()F
+	public final fun getPanelFallbackAlpha ()F
+	public final fun getPanelShape ()Landroidx/compose/ui/graphics/Shape;
+	public final fun getPolicy ()Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
+	public final fun getShadowMultiplier ()F
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+	public final fun usesBlur (Z)Z
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassTheme {
+	public static final field $stable I
+	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/SeaGlassTheme;
+	public final fun getColors (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public final fun getCorners ()Lio/github/mariorsh/seaglass/compose/SeaGlassCorners;
+	public final fun getMotion (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;
+	public final fun getSpacing ()Lio/github/mariorsh/seaglass/compose/SeaGlassSpacing;
+	public final fun getStrings (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public final fun getSurfaces (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;
+	public final fun getTypography (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassThemeConfig {
+	public static final field $stable I
+	public fun <init> ()V
+	public fun <init> (Landroidx/compose/material3/ColorScheme;Lio/github/mariorsh/seaglass/compose/SeaGlassColors;Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;Landroidx/compose/material3/Typography;Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;Landroidx/compose/material3/Shapes;Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;)V
+	public synthetic fun <init> (Landroidx/compose/material3/ColorScheme;Lio/github/mariorsh/seaglass/compose/SeaGlassColors;Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;Landroidx/compose/material3/Typography;Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;Landroidx/compose/material3/Shapes;Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Landroidx/compose/material3/ColorScheme;
+	public final fun component2 ()Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public final fun component3 ()Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;
+	public final fun component4 ()Landroidx/compose/material3/Typography;
+	public final fun component5 ()Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+	public final fun component6 ()Landroidx/compose/material3/Shapes;
+	public final fun component7 ()Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;
+	public final fun component8 ()Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;
+	public final fun component9 ()Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public final fun copy (Landroidx/compose/material3/ColorScheme;Lio/github/mariorsh/seaglass/compose/SeaGlassColors;Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;Landroidx/compose/material3/Typography;Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;Landroidx/compose/material3/Shapes;Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;)Lio/github/mariorsh/seaglass/compose/SeaGlassThemeConfig;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SeaGlassThemeConfig;Landroidx/compose/material3/ColorScheme;Lio/github/mariorsh/seaglass/compose/SeaGlassColors;Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;Landroidx/compose/material3/Typography;Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;Landroidx/compose/material3/Shapes;Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassThemeConfig;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getColorScheme ()Landroidx/compose/material3/ColorScheme;
+	public final fun getColors ()Lio/github/mariorsh/seaglass/compose/SeaGlassColors;
+	public final fun getExtraTypography ()Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+	public final fun getFonts ()Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;
+	public final fun getMotion ()Lio/github/mariorsh/seaglass/compose/SeaGlassMotionConfig;
+	public final fun getShapes ()Landroidx/compose/material3/Shapes;
+	public final fun getStrings ()Lio/github/mariorsh/seaglass/compose/SeaGlassStrings;
+	public final fun getSurfaces ()Lio/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle;
+	public final fun getTypography ()Landroidx/compose/material3/Typography;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassThemeKt {
+	public static final fun SeaGlassBackground (Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SeaGlassTheme (ZLio/github/mariorsh/seaglass/compose/GlassBackdrop;Lio/github/mariorsh/seaglass/compose/SeaGlassThemeConfig;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+	public static final fun SeaGlassTheme (ZLio/github/mariorsh/seaglass/compose/GlassBackdrop;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
+}
+
+public final class io/github/mariorsh/seaglass/compose/SeaGlassTypography {
+	public static final field $stable I
+	public fun <init> (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)V
+	public final fun component1 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun component2 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun component3 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun component4 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun component5 ()Landroidx/compose/ui/text/TextStyle;
+	public final fun copy (Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;)Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/ui/text/TextStyle;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCaptionMono ()Landroidx/compose/ui/text/TextStyle;
+	public final fun getDisplayLargeEmphasized ()Landroidx/compose/ui/text/TextStyle;
+	public final fun getHeadlineMediumEmphasized ()Landroidx/compose/ui/text/TextStyle;
+	public final fun getLabelLargeEmphasized ()Landroidx/compose/ui/text/TextStyle;
+	public final fun getTitleLargeEmphasized ()Landroidx/compose/ui/text/TextStyle;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgButtonSize : java/lang/Enum {
+	public static final field ExtraLarge Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static final field ExtraSmall Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static final field Large Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static final field Medium Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static final field Small Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getFontSize-XSAIIZE ()J
+	public final fun getGap-D9Ej5fM ()F
+	public final fun getHeight-D9Ej5fM ()F
+	public final fun getHorizontalPadding-D9Ej5fM ()F
+	public final fun getIconSize-D9Ej5fM ()F
+	public final fun getSquareRadius-D9Ej5fM ()F
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgButtonSize;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgButtonStyle : java/lang/Enum {
+	public static final field Danger Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static final field Elevated Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static final field Filled Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static final field Outlined Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static final field Text Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static final field Tonal Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgButtonStyle;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgCardVariant : java/lang/Enum {
+	public static final field Elevated Lio/github/mariorsh/seaglass/compose/SgCardVariant;
+	public static final field Filled Lio/github/mariorsh/seaglass/compose/SgCardVariant;
+	public static final field Outlined Lio/github/mariorsh/seaglass/compose/SgCardVariant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgCardVariant;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgCardVariant;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgFabColor : java/lang/Enum {
+	public static final field Primary Lio/github/mariorsh/seaglass/compose/SgFabColor;
+	public static final field PrimaryContainer Lio/github/mariorsh/seaglass/compose/SgFabColor;
+	public static final field SecondaryContainer Lio/github/mariorsh/seaglass/compose/SgFabColor;
+	public static final field TertiaryContainer Lio/github/mariorsh/seaglass/compose/SgFabColor;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgFabColor;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgFabColor;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgFabMenuItem {
+	public static final field $stable I
+	public fun <init> (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function0;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Landroidx/compose/ui/graphics/vector/ImageVector;
+	public final fun component3 ()Lkotlin/jvm/functions/Function0;
+	public final fun copy (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function0;)Lio/github/mariorsh/seaglass/compose/SgFabMenuItem;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SgFabMenuItem;Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SgFabMenuItem;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIcon ()Landroidx/compose/ui/graphics/vector/ImageVector;
+	public final fun getLabel ()Ljava/lang/String;
+	public final fun getOnClick ()Lkotlin/jvm/functions/Function0;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgFabSize : java/lang/Enum {
+	public static final field Large Lio/github/mariorsh/seaglass/compose/SgFabSize;
+	public static final field Medium Lio/github/mariorsh/seaglass/compose/SgFabSize;
+	public static final field Small Lio/github/mariorsh/seaglass/compose/SgFabSize;
+	public final fun getBox-D9Ej5fM ()F
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getFontSize-XSAIIZE ()J
+	public final fun getIconSize-D9Ej5fM ()F
+	public final fun getPaddingEnd-D9Ej5fM ()F
+	public final fun getPaddingStart-D9Ej5fM ()F
+	public final fun getRadius-D9Ej5fM ()F
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgFabSize;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgFabSize;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgIconButtonSize : java/lang/Enum {
+	public static final field ExtraSmall Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+	public static final field Large Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+	public static final field Medium Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+	public static final field Small Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+	public final fun getBox-D9Ej5fM ()F
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getIconSize-D9Ej5fM ()F
+	public final fun getSquareRadius-D9Ej5fM ()F
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgIconButtonSize;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgIconButtonStyle : java/lang/Enum {
+	public static final field Filled Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+	public static final field Outlined Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+	public static final field Standard Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+	public static final field Tonal Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgIconButtonStyle;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgIconButtonWidth : java/lang/Enum {
+	public static final field Default Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;
+	public static final field Narrow Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;
+	public static final field Wide Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgIconButtonWidth;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgMenuGroupPosition : java/lang/Enum {
+	public static final field First Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+	public static final field Last Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+	public static final field Middle Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+	public static final field Single Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgMenuGroupPosition;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgPolarShape : androidx/compose/ui/graphics/Shape {
+	public static final field $stable I
+	public fun <init> (IFFFI)V
+	public synthetic fun <init> (IFFFIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun createOutline-Pq9zytI (JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgSliderColor : java/lang/Enum {
+	public static final field Primary Lio/github/mariorsh/seaglass/compose/SgSliderColor;
+	public static final field Secondary Lio/github/mariorsh/seaglass/compose/SgSliderColor;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgSliderColor;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgSliderColor;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgSliderSize : java/lang/Enum {
+	public static final field ExtraSmall Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+	public static final field Large Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+	public static final field Medium Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+	public static final field Small Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getHandle-D9Ej5fM ()F
+	public final fun getOuterRadius-D9Ej5fM ()F
+	public final fun getTrack-D9Ej5fM ()F
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgSliderSize;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgTab {
+	public static final field $stable I
+	public fun <init> (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;)V
+	public synthetic fun <init> (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Landroidx/compose/ui/graphics/vector/ImageVector;
+	public final fun copy (Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;)Lio/github/mariorsh/seaglass/compose/SgTab;
+	public static synthetic fun copy$default (Lio/github/mariorsh/seaglass/compose/SgTab;Ljava/lang/String;Landroidx/compose/ui/graphics/vector/ImageVector;ILjava/lang/Object;)Lio/github/mariorsh/seaglass/compose/SgTab;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getIcon ()Landroidx/compose/ui/graphics/vector/ImageVector;
+	public final fun getLabel ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgTabVariant : java/lang/Enum {
+	public static final field Primary Lio/github/mariorsh/seaglass/compose/SgTabVariant;
+	public static final field Secondary Lio/github/mariorsh/seaglass/compose/SgTabVariant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgTabVariant;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgTabVariant;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgTextFieldVariant : java/lang/Enum {
+	public static final field Filled Lio/github/mariorsh/seaglass/compose/SgTextFieldVariant;
+	public static final field Outlined Lio/github/mariorsh/seaglass/compose/SgTextFieldVariant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgTextFieldVariant;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgTextFieldVariant;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgToolbarVariant : java/lang/Enum {
+	public static final field Docked Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;
+	public static final field Floating Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;
+	public static final field FloatingVibrant Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgToolbarVariant;
+}
+
+public final class io/github/mariorsh/seaglass/compose/SgTopAppBarVariant : java/lang/Enum {
+	public static final field CenterAligned Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+	public static final field Large Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+	public static final field Medium Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+	public static final field Small Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+	public static fun values ()[Lio/github/mariorsh/seaglass/compose/SgTopAppBarVariant;
+}
+
+public final class io/github/mariorsh/seaglass/compose/TokensKt {
+	public static final fun seaGlassShapes ()Landroidx/compose/material3/Shapes;
+}
+
+public final class io/github/mariorsh/seaglass/compose/TypeKt {
+	public static final fun getLocalSeaGlassTypography ()Landroidx/compose/runtime/ProvidableCompositionLocal;
+	public static final fun rememberSeaGlassFonts (Landroidx/compose/runtime/Composer;I)Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;
+	public static final fun seaGlassExtraTypography (Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;)Lio/github/mariorsh/seaglass/compose/SeaGlassTypography;
+	public static final fun seaGlassTypography (Lio/github/mariorsh/seaglass/compose/SeaGlassFonts;)Landroidx/compose/material3/Typography;
+}
+
