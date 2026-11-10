@@ -9,7 +9,9 @@ Notas para quien compila, prueba o publica la librería. La documentación de us
 ```
 
 Añade `mavenLocal()` al consumidor, o usa `includeBuild("../sea-glass")` con las mismas coordenadas.
-Windows/Linux omiten los artefactos iOS: para un conjunto completo usa macOS.
+Con este toolchain, Windows produce y publica los klibs de `iosArm64`/`iosSimulatorArm64`
+(verificado contra el staging repository); el enlazado final de framework para `sample`
+(`linkDebugFrameworkIosSimulatorArm64`, Xcode) sigue requiriendo macOS.
 
 ## Demo, tests y documentación API
 
