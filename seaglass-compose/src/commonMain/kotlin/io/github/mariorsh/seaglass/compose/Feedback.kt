@@ -91,7 +91,7 @@ private fun waveFlatten(p: Float): Float = when {
  * [progress] es una lambda para no recomponer en cada frame.
  */
 @Composable
-fun SgLinearProgress(
+public fun SgLinearProgress(
     progress: () -> Float,
     modifier: Modifier = Modifier,
     thick: Boolean = false,
@@ -151,7 +151,7 @@ private fun DrawScope.drawWave(color: Color, start: Float, end: Float, cy: Float
 
 /** Progreso lineal indeterminado: un tramo recorre la pista. */
 @Composable
-fun SgLinearProgressIndeterminate(
+public fun SgLinearProgressIndeterminate(
     modifier: Modifier = Modifier,
     thick: Boolean = false,
     color: Color = MaterialTheme.colorScheme.primary,
@@ -178,7 +178,7 @@ fun SgLinearProgressIndeterminate(
 
 /** Progreso circular determinado. [wavy] dibuja el borde ondulado de Expressive. */
 @Composable
-fun SgCircularProgress(
+public fun SgCircularProgress(
     progress: () -> Float,
     modifier: Modifier = Modifier,
     size: Dp = 48.dp,
@@ -232,7 +232,7 @@ fun SgCircularProgress(
  * library. Para esperas de menos de 5 s sin progreso medible.
  */
 @Composable
-fun SgLoadingIndicator(
+public fun SgLoadingIndicator(
     modifier: Modifier = Modifier,
     contained: Boolean = false,
     color: Color = MaterialTheme.colorScheme.primary,
@@ -278,7 +278,7 @@ fun SgLoadingIndicator(
 
 /** Snackbar en `inverse-surface`. Una sola acción como mucho. */
 @Composable
-fun SgSnackbar(
+public fun SgSnackbar(
     message: String,
     modifier: Modifier = Modifier,
     actionLabel: String? = null,
@@ -310,7 +310,7 @@ fun SgSnackbar(
 
 /** SnackbarHost de Material 3 que pinta [SgSnackbar]. Úsalo en el `snackbarHost` del Scaffold. */
 @Composable
-fun SgSnackbarHost(hostState: SnackbarHostState, modifier: Modifier = Modifier) {
+public fun SgSnackbarHost(hostState: SnackbarHostState, modifier: Modifier = Modifier) {
     SnackbarHost(hostState, modifier) { data ->
         SgSnackbar(
             message = data.visuals.message,
@@ -329,7 +329,7 @@ fun SgSnackbarHost(hostState: SnackbarHostState, modifier: Modifier = Modifier) 
 // ---------------------------------------------------------------- Tooltips
 
 @Composable
-fun SgPlainTooltip(text: String, modifier: Modifier = Modifier) {
+public fun SgPlainTooltip(text: String, modifier: Modifier = Modifier) {
     val s = MaterialTheme.colorScheme
     Box(
         modifier
@@ -342,7 +342,7 @@ fun SgPlainTooltip(text: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun SgRichTooltip(
+public fun SgRichTooltip(
     text: String,
     modifier: Modifier = Modifier,
     title: String? = null,
@@ -365,7 +365,7 @@ fun SgRichTooltip(
 /** Tooltip plano al mantener pulsado o al pasar el cursor por [content]. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgTooltipBox(
+public fun SgTooltipBox(
     tooltip: String,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
@@ -382,7 +382,7 @@ fun SgTooltipBox(
 /** Tooltip rico (persistente hasta que se toca fuera). */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgRichTooltipBox(
+public fun SgRichTooltipBox(
     text: String,
     modifier: Modifier = Modifier,
     title: String? = null,
@@ -400,11 +400,11 @@ fun SgRichTooltipBox(
 
 // ---------------------------------------------------------------- Menus
 
-enum class SgMenuGroupPosition { Single, First, Middle, Last }
+public enum class SgMenuGroupPosition { Single, First, Middle, Last }
 
 /** Grupo del menú vertical de Expressive. Los grupos van separados 4 dp. */
 @Composable
-fun SgMenuGroup(
+public fun SgMenuGroup(
     position: SgMenuGroupPosition = SgMenuGroupPosition.Single,
     modifier: Modifier = Modifier,
     content: @Composable ColumnScope.() -> Unit,
@@ -424,7 +424,7 @@ fun SgMenuGroup(
 
 /** Opción de menú. [selected] la pinta como píldora `secondary-container`; [destructive] en `error`. */
 @Composable
-fun SgMenuItem(
+public fun SgMenuItem(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -469,7 +469,7 @@ fun SgMenuItem(
  * Colócalo en un Box junto al control que lo abre.
  */
 @Composable
-fun SgDropdownMenu(
+public fun SgDropdownMenu(
     expanded: Boolean,
     onDismissRequest: () -> Unit,
     modifier: Modifier = Modifier,

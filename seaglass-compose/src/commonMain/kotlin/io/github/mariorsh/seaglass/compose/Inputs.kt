@@ -59,14 +59,14 @@ import kotlin.math.roundToInt
 
 // ---------------------------------------------------------------- Text field
 
-enum class SgTextFieldVariant { Filled, Outlined }
+public enum class SgTextFieldVariant { Filled, Outlined }
 
 /**
  * Campo de texto. Filled: vidrio con línea inferior que se tiñe de espuma al enfocar.
  * Outlined: borde de 1,5 dp. El error se marca con [isError] y se explica en [supportingText].
  */
 @Composable
-fun SgTextField(
+public fun SgTextField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
@@ -190,7 +190,7 @@ fun SgTextField(
 
 /** Casilla con forma de guijarro. Pasa `onCheckedChange = null` si la fila entera ya es clicable. */
 @Composable
-fun SgCheckbox(
+public fun SgCheckbox(
     checked: Boolean,
     onCheckedChange: ((Boolean) -> Unit)?,
     modifier: Modifier = Modifier,
@@ -208,7 +208,7 @@ fun SgCheckbox(
 
 /** Casilla con estado indeterminado (por ejemplo, «Seleccionar todos»). */
 @Composable
-fun SgTriStateCheckbox(
+public fun SgTriStateCheckbox(
     state: ToggleableState,
     onClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
@@ -258,7 +258,7 @@ fun SgTriStateCheckbox(
 
 /** Radio de selección única. Agrupa varios en un contenedor con `Modifier.selectableGroup()`. */
 @Composable
-fun SgRadioButton(
+public fun SgRadioButton(
     selected: Boolean,
     onClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
@@ -291,7 +291,7 @@ fun SgRadioButton(
 
 /** Interruptor de activación inmediata. Encendido es un guijarro `primary` con el pomo en `on-primary`. */
 @Composable
-fun SgSwitch(
+public fun SgSwitch(
     checked: Boolean,
     onCheckedChange: ((Boolean) -> Unit)?,
     modifier: Modifier = Modifier,
@@ -325,14 +325,14 @@ fun SgSwitch(
 
 // ---------------------------------------------------------------- Sliders
 
-enum class SgSliderSize(val track: Dp, val handle: Dp, val outerRadius: Dp) {
+public enum class SgSliderSize(public val track: Dp, public val handle: Dp, public val outerRadius: Dp) {
     ExtraSmall(16.dp, 44.dp, 8.dp),
     Small(24.dp, 44.dp, 8.dp),
     Medium(40.dp, 52.dp, 12.dp),
     Large(56.dp, 68.dp, 16.dp),
 }
 
-enum class SgSliderColor { Primary, Secondary }
+public enum class SgSliderColor { Primary, Secondary }
 
 private val TrackGap = 6.dp
 private val InnerRadius = 2.dp
@@ -443,7 +443,7 @@ private fun SliderHandle(
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgSlider(
+public fun SgSlider(
     value: Float,
     onValueChange: (Float) -> Unit,
     modifier: Modifier = Modifier,
@@ -482,7 +482,7 @@ fun SgSlider(
 /** Slider de rango con dos asas. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgRangeSlider(
+public fun SgRangeSlider(
     value: ClosedFloatingPointRange<Float>,
     onValueChange: (ClosedFloatingPointRange<Float>) -> Unit,
     modifier: Modifier = Modifier,

@@ -15,11 +15,11 @@ import io.github.mariorsh.seaglass.compose.GlassLevel
 import io.github.mariorsh.seaglass.compose.SeaGlassTheme
 
 /** Capture only background siblings; never wrap both source and glass in this modifier. */
-fun Modifier.seaGlassHazeSource(state: HazeState): Modifier = hazeSource(state)
+public fun Modifier.seaGlassHazeSource(state: HazeState): Modifier = hazeSource(state)
 
 /** Call inside a SeaGlassTheme. Provider support is conservative; false forces fallback. */
 @Composable
-fun rememberHazeBackdrop(state: HazeState, enabled: Boolean = true): GlassBackdrop {
+public fun rememberHazeBackdrop(state: HazeState, enabled: Boolean = true): GlassBackdrop {
     val background = SeaGlassTheme.colors.ground
     val available = enabled && HazeBlurDefaults.isBlurEnabledByDefault()
     return remember(state, background, available) {

@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 
 // ---------------------------------------------------------------- Cards
 
-enum class SgCardVariant { Elevated, Filled, Outlined }
+public enum class SgCardVariant { Elevated, Filled, Outlined }
 
 private val CardShape: androidx.compose.ui.graphics.Shape
     @Composable get() = MaterialTheme.shapes.extraLarge
@@ -52,7 +52,7 @@ private val CardShape: androidx.compose.ui.graphics.Shape
  * Con [onClick] toda la card es clicable: no pongas botones dentro en ese caso.
  */
 @Composable
-fun SgCard(
+public fun SgCard(
     modifier: Modifier = Modifier,
     variant: SgCardVariant = SgCardVariant.Elevated,
     onClick: (() -> Unit)? = null,
@@ -81,7 +81,7 @@ fun SgCard(
  * (`SeaGlassTheme.colors.seafoam`, `cobalt`, `amber`…). Con foto, pon un `Image` con `ContentScale.Crop`.
  */
 @Composable
-fun SgMedia(
+public fun SgMedia(
     modifier: Modifier = Modifier,
     color: Color = SeaGlassTheme.colors.seafoam,
     shape: Shape = RoundedCornerShape(SeaGlassCorners.LargeIncreased),
@@ -108,7 +108,7 @@ fun SgMedia(
 
 /** Título, supertítulo y texto de una card, con el padding interior correcto. */
 @Composable
-fun SgCardBody(
+public fun SgCardBody(
     title: String,
     modifier: Modifier = Modifier,
     overline: String? = null,
@@ -125,7 +125,7 @@ fun SgCardBody(
 
 /** Fila de acciones al pie de una card, alineada a la derecha. */
 @Composable
-fun SgCardActions(
+public fun SgCardActions(
     modifier: Modifier = Modifier,
     horizontalArrangement: Arrangement.Horizontal = Arrangement.spacedBy(8.dp, Alignment.End),
     content: @Composable RowScope.() -> Unit,
@@ -142,7 +142,7 @@ fun SgCardActions(
 
 /** Elemento de lista de una, dos o tres líneas. */
 @Composable
-fun SgListItem(
+public fun SgListItem(
     headline: String,
     modifier: Modifier = Modifier,
     supporting: String? = null,
@@ -175,7 +175,7 @@ fun SgListItem(
 
 /** Icono inicial de lista: guijarro de espuma de 40 dp. */
 @Composable
-fun SgListIcon(icon: ImageVector, modifier: Modifier = Modifier) {
+public fun SgListIcon(icon: ImageVector, modifier: Modifier = Modifier) {
     val s = MaterialTheme.colorScheme
     Box(modifier.size(40.dp).frost(s.primaryContainer, MaterialTheme.shapes.medium), contentAlignment = Alignment.Center) {
         Icon(icon, null, Modifier.size(20.dp), tint = s.onPrimaryContainer)
@@ -184,12 +184,12 @@ fun SgListIcon(icon: ImageVector, modifier: Modifier = Modifier) {
 
 /** Metadato final de lista (hora, tamaño) en mono. */
 @Composable
-fun SgListMeta(text: String) {
+public fun SgListMeta(text: String) {
     Text(text.uppercase(), style = SeaGlassTheme.typography.captionMono, color = SeaGlassTheme.colors.inkMuted)
 }
 
 @Composable
-fun SgDivider(modifier: Modifier = Modifier, inset: Boolean = false) {
+public fun SgDivider(modifier: Modifier = Modifier, inset: Boolean = false) {
     HorizontalDivider(modifier.padding(start = if (inset) 64.dp else 0.dp), color = MaterialTheme.colorScheme.outlineVariant)
 }
 
@@ -198,7 +198,7 @@ fun SgDivider(modifier: Modifier = Modifier, inset: Boolean = false) {
  * `corner-xs` dentro. Ponlas en un `Column(verticalArrangement = Arrangement.spacedBy(2.dp))`.
  */
 @Composable
-fun SgSegmentedListItem(
+public fun SgSegmentedListItem(
     headline: String,
     index: Int,
     count: Int,
@@ -240,7 +240,7 @@ fun SgSegmentedListItem(
 /** Carrusel multi-browse: un elemento grande y el resto encogiéndose hacia el borde. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgMultiBrowseCarousel(
+public fun SgMultiBrowseCarousel(
     itemCount: Int,
     modifier: Modifier = Modifier,
     preferredItemWidth: Dp = 240.dp,
@@ -261,7 +261,7 @@ fun SgMultiBrowseCarousel(
 /** Carrusel sin contener: elementos de ancho fijo que se cortan en el borde. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgUncontainedCarousel(
+public fun SgUncontainedCarousel(
     itemCount: Int,
     modifier: Modifier = Modifier,
     itemWidth: Dp = 170.dp,
@@ -281,7 +281,7 @@ fun SgUncontainedCarousel(
 
 /** Celda de carrusel de reserva: guijarro de color con etiqueta opcional abajo. */
 @Composable
-fun BoxScope.SgCarouselTile(color: Color, label: String? = null) {
+public fun BoxScope.SgCarouselTile(color: Color, label: String? = null) {
     SgMedia(Modifier.fillMaxSize(), color = color, shape = RoundedCornerShape(0.dp), height = null) {
         if (label != null) {
             Text(

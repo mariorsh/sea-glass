@@ -54,7 +54,7 @@ private val DialogShape: androidx.compose.ui.graphics.Shape
  * [destructive] pinta la confirmación en `error`.
  */
 @Composable
-fun SgAlertDialog(
+public fun SgAlertDialog(
     onDismissRequest: () -> Unit,
     title: String,
     text: String,
@@ -101,7 +101,7 @@ fun SgAlertDialog(
  * largos en ventanas compactas. En ventanas grandes usa [SgAlertDialog] o un dialog básico propio.
  */
 @Composable
-fun SgFullScreenDialog(
+public fun SgFullScreenDialog(
     onDismissRequest: () -> Unit,
     title: String,
     confirmLabel: String,
@@ -143,7 +143,7 @@ fun SgFullScreenDialog(
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgModalBottomSheet(
+public fun SgModalBottomSheet(
     onDismissRequest: () -> Unit,
     modifier: Modifier = Modifier,
     sheetState: SheetState? = null,
@@ -180,7 +180,7 @@ fun SgModalBottomSheet(
 
 /** Acción rápida de bottom sheet (rejilla de hasta 4). */
 @Composable
-fun RowScope.SgSheetAction(
+public fun RowScope.SgSheetAction(
     icon: ImageVector,
     label: String,
     onClick: () -> Unit,
@@ -215,7 +215,7 @@ fun RowScope.SgSheetAction(
  * La ventana de diálogo gestiona Atrás/Escape y aislamiento del contenido de fondo.
  */
 @Composable
-fun SgModalSideSheet(
+public fun SgModalSideSheet(
     open: Boolean,
     onDismissRequest: () -> Unit,
     title: String,

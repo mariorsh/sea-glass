@@ -51,16 +51,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 /** Énfasis de un botón. */
-enum class SgButtonStyle { Filled, Tonal, Elevated, Outlined, Text, Danger }
+public enum class SgButtonStyle { Filled, Tonal, Elevated, Outlined, Text, Danger }
 
 /** Tamaños de botón de M3 Expressive (XS–XL). [squareRadius] es la esquina de la forma cuadrada y del estado pulsado. */
-enum class SgButtonSize(
-    val height: Dp,
-    val horizontalPadding: Dp,
-    val fontSize: TextUnit,
-    val iconSize: Dp,
-    val gap: Dp,
-    val squareRadius: Dp,
+public enum class SgButtonSize(
+    public val height: Dp,
+    public val horizontalPadding: Dp,
+    public val fontSize: TextUnit,
+    public val iconSize: Dp,
+    public val gap: Dp,
+    public val squareRadius: Dp,
 ) {
     ExtraSmall(32.dp, 12.dp, 13.sp, 18.dp, 6.dp, 12.dp),
     Small(40.dp, 16.dp, 14.sp, 20.dp, 8.dp, 12.dp),
@@ -178,7 +178,7 @@ private fun buttonTextStyle(size: SgButtonSize): TextStyle =
  * Al pulsarlo, la forma redonda se cuadra con el muelle spatial fast (shape morph de Expressive).
  */
 @Composable
-fun SgButton(
+public fun SgButton(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     style: SgButtonStyle = SgButtonStyle.Filled,
@@ -212,7 +212,7 @@ fun SgButton(
 
 /** Atajo con texto. */
 @Composable
-fun SgButton(
+public fun SgButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -221,11 +221,11 @@ fun SgButton(
     square: Boolean = false,
     enabled: Boolean = true,
     icon: ImageVector? = null,
-) = SgButton(onClick, modifier, style, size, square, enabled, icon) { Text(text) }
+): Unit = SgButton(onClick, modifier, style, size, square, enabled, icon) { Text(text) }
 
 /** Toggle button de Expressive: redondo en reposo, cuadrado y `primary` al seleccionarlo. */
 @Composable
-fun SgToggleButton(
+public fun SgToggleButton(
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     text: String,
@@ -259,20 +259,20 @@ fun SgToggleButton(
     }
 }
 
-enum class SgIconButtonStyle { Standard, Filled, Tonal, Outlined }
+public enum class SgIconButtonStyle { Standard, Filled, Tonal, Outlined }
 
-enum class SgIconButtonSize(val box: Dp, val iconSize: Dp, val squareRadius: Dp) {
+public enum class SgIconButtonSize(public val box: Dp, public val iconSize: Dp, public val squareRadius: Dp) {
     ExtraSmall(32.dp, 20.dp, 10.dp),
     Small(40.dp, 22.dp, 12.dp),
     Medium(56.dp, 24.dp, 16.dp),
     Large(96.dp, 32.dp, 28.dp),
 }
 
-enum class SgIconButtonWidth(internal val factor: Float) { Narrow(0.8f), Default(1f), Wide(1.3f) }
+public enum class SgIconButtonWidth(internal val factor: Float) { Narrow(0.8f), Default(1f), Wide(1.3f) }
 
 /** Botón de solo icono. [contentDescription] es obligatorio salvo que el icono sea decorativo. */
 @Composable
-fun SgIconButton(
+public fun SgIconButton(
     onClick: () -> Unit,
     icon: ImageVector,
     contentDescription: String?,
@@ -313,7 +313,7 @@ fun SgIconButton(
 
 /** Icon button con estado: seleccionado pasa a `tertiary` y se cuadra. */
 @Composable
-fun SgIconToggleButton(
+public fun SgIconToggleButton(
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     icon: ImageVector,
@@ -348,7 +348,7 @@ fun SgIconToggleButton(
 
 /** Grupo estándar de Expressive: 8 dp entre botones; morphing sin crecimiento horizontal para respetar las restricciones. */
 @Composable
-fun SgButtonGroup(
+public fun SgButtonGroup(
     modifier: Modifier = Modifier,
     content: @Composable RowScope.() -> Unit,
 ) {
@@ -369,7 +369,7 @@ private fun animatedSegmentShape(outerStart: Boolean, outerEnd: Boolean, selecte
  * Los exteriores son píldora, los interiores `corner-s`; el seleccionado pasa a `secondary`.
  */
 @Composable
-fun SgConnectedButtonGroup(
+public fun SgConnectedButtonGroup(
     options: List<String>,
     selectedIndex: Int,
     onSelect: (Int) -> Unit,
@@ -381,7 +381,7 @@ fun SgConnectedButtonGroup(
 
 /** Connected button group con selección múltiple. */
 @Composable
-fun SgConnectedButtonGroupMulti(
+public fun SgConnectedButtonGroupMulti(
     options: List<String>,
     selected: Set<Int>,
     onToggle: (Int) -> Unit,
@@ -431,7 +431,7 @@ private fun ConnectedRow(
 
 /** Segmented buttons de M3 base. En diseños nuevos, usa [SgConnectedButtonGroup]. */
 @Composable
-fun SgSegmentedButtons(
+public fun SgSegmentedButtons(
     options: List<String>,
     selectedIndex: Int,
     onSelect: (Int) -> Unit,
@@ -471,7 +471,7 @@ fun SgSegmentedButtons(
 
 /** Split button de Expressive: acción por defecto + disparador de menú. */
 @Composable
-fun SgSplitButton(
+public fun SgSplitButton(
     text: String,
     onClick: () -> Unit,
     expanded: Boolean,

@@ -25,20 +25,20 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-enum class SgFabSize(
-    val box: Dp,
-    val radius: Dp,
-    val iconSize: Dp,
-    val fontSize: TextUnit,
-    val paddingStart: Dp,
-    val paddingEnd: Dp,
+public enum class SgFabSize(
+    public val box: Dp,
+    public val radius: Dp,
+    public val iconSize: Dp,
+    public val fontSize: TextUnit,
+    public val paddingStart: Dp,
+    public val paddingEnd: Dp,
 ) {
     Small(56.dp, 16.dp, 24.dp, 16.sp, 16.dp, 20.dp),
     Medium(80.dp, 20.dp, 28.dp, 22.sp, 24.dp, 28.dp),
     Large(96.dp, 28.dp, 36.dp, 26.sp, 30.dp, 36.dp),
 }
 
-enum class SgFabColor { PrimaryContainer, SecondaryContainer, TertiaryContainer, Primary }
+public enum class SgFabColor { PrimaryContainer, SecondaryContainer, TertiaryContainer, Primary }
 
 @Composable
 private fun fabColors(color: SgFabColor): Triple<Fill, Color, Color> {
@@ -53,7 +53,7 @@ private fun fabColors(color: SgFabColor): Triple<Fill, Color, Color> {
 
 /** Floating action button: la acción más importante de la pantalla. 56 / 80 / 96 dp. */
 @Composable
-fun SgFab(
+public fun SgFab(
     onClick: () -> Unit,
     icon: ImageVector,
     contentDescription: String?,
@@ -90,7 +90,7 @@ fun SgFab(
 
 /** FAB extendido con texto. Con [expanded] = false se pliega a FAB (útil al hacer scroll). */
 @Composable
-fun SgExtendedFab(
+public fun SgExtendedFab(
     text: String,
     icon: ImageVector,
     onClick: () -> Unit,
@@ -132,14 +132,14 @@ fun SgExtendedFab(
     }
 }
 
-data class SgFabMenuItem(val label: String, val icon: ImageVector, val onClick: () -> Unit)
+public data class SgFabMenuItem(val label: String, val icon: ImageVector, val onClick: () -> Unit)
 
 /**
  * FAB menu de Expressive: el FAB se convierte en un botón de cierre y despliega encima
  * de 2 a 6 píldoras `primary` de 56 dp.
  */
 @Composable
-fun SgFabMenu(
+public fun SgFabMenu(
     expanded: Boolean,
     onExpandedChange: (Boolean) -> Unit,
     items: List<SgFabMenuItem>,

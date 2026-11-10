@@ -78,7 +78,7 @@ private fun ChipFrame(
 
 /** Assist chip: acción contextual con icono en `primary`. [elevated] para usarlo sobre imágenes. */
 @Composable
-fun SgAssistChip(
+public fun SgAssistChip(
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -99,7 +99,7 @@ fun SgAssistChip(
 
 /** Filter chip: al seleccionarlo pasa a espuma con un check delante. */
 @Composable
-fun SgFilterChip(
+public fun SgFilterChip(
     label: String,
     selected: Boolean,
     onSelectedChange: (Boolean) -> Unit,
@@ -124,7 +124,7 @@ fun SgFilterChip(
 
 /** Input chip: un valor introducido por el usuario, con avatar opcional y botón para quitarlo. */
 @Composable
-fun SgInputChip(
+public fun SgInputChip(
     label: String,
     onRemove: () -> Unit,
     modifier: Modifier = Modifier,
@@ -152,7 +152,7 @@ fun SgInputChip(
 
 /** Suggestion chip: una respuesta o búsqueda propuesta, solo texto. */
 @Composable
-fun SgSuggestionChip(
+public fun SgSuggestionChip(
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -170,7 +170,7 @@ fun SgSuggestionChip(
 
 /** Avatar circular con iniciales. */
 @Composable
-fun SgAvatar(
+public fun SgAvatar(
     initials: String,
     modifier: Modifier = Modifier,
     size: Dp = 24.dp,

@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
  * @param backdrop desenfoque real del fondo para el vidrio; ver [GlassBackdrop].
  */
 @Composable
-fun SeaGlassTheme(
+public fun SeaGlassTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     backdrop: GlassBackdrop = GlassBackdrop.None,
     config: SeaGlassThemeConfig = SeaGlassThemeConfig(),
@@ -59,23 +59,23 @@ fun SeaGlassTheme(
 /** Source compatibility for callers that pass the content lambda as a third argument. */
 @Deprecated("Use the overload with SeaGlassThemeConfig", level = DeprecationLevel.WARNING)
 @Composable
-fun SeaGlassTheme(darkTheme: Boolean, backdrop: GlassBackdrop, content: @Composable () -> Unit) =
+public fun SeaGlassTheme(darkTheme: Boolean, backdrop: GlassBackdrop, content: @Composable () -> Unit): Unit =
     SeaGlassTheme(darkTheme = darkTheme, backdrop = backdrop, config = SeaGlassThemeConfig(), content = content)
 
-object SeaGlassTheme {
-    val colors: SeaGlassColors
+public object SeaGlassTheme {
+    public val colors: SeaGlassColors
         @Composable @ReadOnlyComposable get() = LocalSeaGlassColors.current
 
-    val typography: SeaGlassTypography
+    public val typography: SeaGlassTypography
         @Composable @ReadOnlyComposable get() = LocalSeaGlassTypography.current
 
-    val corners get() = SeaGlassCorners
-    val spacing get() = SeaGlassSpacing
-    val motion: SeaGlassMotionConfig
+    public val corners: SeaGlassCorners get() = SeaGlassCorners
+    public val spacing: SeaGlassSpacing get() = SeaGlassSpacing
+    public val motion: SeaGlassMotionConfig
         @Composable @ReadOnlyComposable get() = LocalSeaGlassConfig.current.motion
-    val surfaces: SeaGlassSurfaceStyle
+    public val surfaces: SeaGlassSurfaceStyle
         @Composable @ReadOnlyComposable get() = LocalSeaGlassConfig.current.surfaces
-    val strings: SeaGlassStrings
+    public val strings: SeaGlassStrings
         @Composable @ReadOnlyComposable get() = LocalSeaGlassConfig.current.strings
 }
 
@@ -84,7 +84,7 @@ object SeaGlassTheme {
  * El vidrio necesita algo detrás para leerse: pon tu Scaffold dentro.
  */
 @Composable
-fun SeaGlassBackground(
+public fun SeaGlassBackground(
     modifier: Modifier = Modifier,
     pebbles: Boolean = true,
     content: @Composable BoxScope.() -> Unit,
