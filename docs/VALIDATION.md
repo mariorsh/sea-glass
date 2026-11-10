@@ -74,33 +74,21 @@ never regenerates baselines automatically.
 
 ## Device exploration prerequisite
 
-Device chosen by owner: Nothing A015, serial `00101347R001053`, Android 17, 1080×2400.
-ARTEMIS diagnosis and hierarchy observations were performed before authoring tests.
-The autonomous Pro and Flash runners both fail before execution because the configured
-Planner requires GOOGLE_API_KEY; do not interpret their task-start acknowledgements
-as successful exploration. No credentials were changed. Direct ARTEMIS hierarchy
-and screenshot observation, together with ADB actions, were used to verify visible
-states. The empty form produced `Name is required`; opening Dialog exposed
+Manual on-device exploration (Android 17, 1080×2400) verified visible states before
+authoring tests. The empty form produced `Name is required`; opening Dialog exposed
 `Discard changes?`, `Cancel`, `Confirm`; opening Sheet exposed `Filters`, `Apply`.
 These observations do not verify screen reader behavior or desktop focus confinement.
 
-A subsequent bounded ADB sequence opened the drawer and dismissed it with Back,
-returning to the Checks screen. On Scroll / perf, scrolling under the overlay was
-inspected in Blur, Fallback and Opaque: the overlay text stayed crisp, the underlying
-text was blurred in Blur, visible through the fallback and hidden by Opaque. RTL
-mirrored logical text and control alignment. These are visual checks on this device,
-not frame-time measurements or coverage of other renderers.
+The drawer opened and was dismissed with Back, returning to the Checks screen. On
+Scroll / perf, scrolling under the overlay was inspected in Blur, Fallback and Opaque:
+the overlay text stayed crisp, the underlying text was blurred in Blur, visible
+through the fallback and hidden by Opaque. RTL mirrored logical text and control
+alignment. These are visual checks on this device, not frame-time measurements or
+coverage of other renderers.
 
 At the sample's 200% font setting the long ExtraSmall button wrapped to two lines
 and grew vertically. The catalogue tabs retain single-line labels (which may be
 visually truncated in narrow windows); their full labels remain available in semantics.
-
-ARTEMIS also reports an optional port warning:
-“Another program is listening on 127.0.0.1:8000 (often a dev server). Stop it, or set
-ARTEMIS_DAEMON_PORT to a free port in the MCP server's env block and restart the MCP
-server. Tasks still run in standalone mode meanwhile, without the shared scheduler.”
-To restore autonomous runs, configure the provider/Planner credentials in the
-ARTEMIS `.env` or MCP environment, then reload its MCP server; never paste keys in chat.
 
 ## Visual matrix (manual, no golden-image claim)
 
