@@ -52,13 +52,13 @@ Disponible en **Maven Central**. Con `google()` y `mavenCentral()` en tus reposi
 
 ```kotlin
 // commonMain.dependencies en KMP; dependencies en Android.
-implementation("io.github.mariorsh.seaglass:seaglass-compose:0.2.0")
+implementation("io.github.mariorsh.seaglass:seaglass-compose:0.3.0-alpha01")
 ```
 
 Para añadir blur real con Haze:
 
 ```kotlin
-implementation("io.github.mariorsh.seaglass:seaglass-haze:0.2.0")
+implementation("io.github.mariorsh.seaglass:seaglass-haze:0.3.0-alpha01")
 ```
 
 **¿Vienes de la 0.1.1?** Han cambiado las coordenadas y los paquetes. Consulta la [guía de migración](docs/MIGRATION.md) antes de actualizar.
@@ -178,7 +178,7 @@ El núcleo funciona sin Haze. Los modificadores `glass()`, `glassPanel()`, `fros
 <details>
 <summary><strong>Integración con Haze</strong></summary>
 
-El módulo opcional `seaglass-haze` utiliza Haze **1.5.3**.
+El módulo opcional `seaglass-haze` utiliza Haze **2.1.0**.
 
 ```kotlin
 import androidx.compose.foundation.layout.Box
@@ -265,13 +265,13 @@ Consulta la [matriz de validación](docs/VALIDATION.md) para distinguir las comp
 
 | Plataforma / dependencia | Compatibilidad |
 | :--- | :--- |
-| Android | minSdk 24. El adaptador utiliza blur desde API 32 y fallback en versiones anteriores. |
-| iOS | `iosArm64`, `iosSimulatorArm64`, `iosX64`. |
+| Android | minSdk 24, compileSdk 37. El adaptador utiliza blur desde API 32 y fallback en versiones anteriores. |
+| iOS | `iosArm64`, `iosSimulatorArm64`. |
 | Desktop | JVM. |
 | Web | Wasm. El blur depende del renderer y del navegador. |
-| Kotlin | 2.1.21. |
-| Compose Multiplatform | 1.8.2. |
-| Haze, opcional | 1.5.3. |
+| Kotlin | 2.4.21. |
+| Compose Multiplatform | 1.12.2. |
+| Haze, opcional | 2.1.0 (`haze` + `haze-blur`). |
 
 ## Documentación y desarrollo
 

@@ -20,7 +20,7 @@ Windows/Linux omiten los artefactos iOS: para un conjunto completo usa macOS.
 ./gradlew :sample:wasmJsBrowserDistribution
 ./gradlew :sample:linkDebugFrameworkIosSimulatorArm64 # macOS
 ./gradlew :seaglass-compose:desktopTest apiCheck
-./gradlew :seaglass-compose:dokkaHtml :seaglass-haze:dokkaHtml
+./gradlew :seaglass-compose:dokkaGeneratePublicationHtml :seaglass-haze:dokkaGeneratePublicationHtml
 ```
 
 Si hay varios Android, instala el APK con `adb -s SERIAL install -r sample/build/outputs/apk/debug/sample-debug.apk`. La galería está en `sample`, fuera del artefacto de producción. Incluye catálogo, formulario local, modales, 200 tarjetas y controles para Noche, marca, RTL, fuente al 200%, movimiento reducido y tres modos de superficie. No necesita backend.
@@ -32,10 +32,18 @@ iOS: integra `SeaGlassSample.framework` en tu app Xcode y presenta `MainViewCont
 
 | Pieza | Versión |
 |---|---|
-| AGP / Gradle | 8.7.3 / 8.14.3; JDK 17+ (Gradle 8.14 no soporta JDK 25) |
-| Android demo | compile/target 35 |
-| API / documentación | Binary Compatibility Validator 0.17.0 / Dokka 1.9.20 |
+| Kotlin / Compose Multiplatform | 2.4.21 / 1.12.2 |
+| AGP / Gradle | 9.5.1 / 9.9.0; JDK 17+ |
+| Android demo | compile/target 37 |
+| API / documentación | Binary Compatibility Validator 0.18.2 (JVM + klib) / Dokka 2.3.0 |
+| Haze, opcional | 2.1.0 (`haze` + `haze-blur`) |
 | Validación | escritorio en Windows; Apple requiere macOS |
+
+AGP 9's built-in Kotlin/new DSL reject the legacy `com.android.library`/`application`
+plugins combined with `org.jetbrains.kotlin.multiplatform`; `android.builtInKotlin=false`
+and `android.newDsl=false` in `gradle.properties` (AGP's own recommended bypass) keep
+the current module layout for this platform-only release. Migrating to
+`com.android.kotlin.multiplatform.library` is a separate, larger change, not done here.
 
 La compatibilidad de compilación no sustituye la validación visual de cada renderer. No se han medido mejoras de rendimiento. Se conservan los modificadores `composed` para resolver el tema y construir modificadores de terceros; no hay evidencia que justifique sustituirlos por Node. Se almacenan pinceles/paths y el progreso se lee en dibujo/semánticas, fuera de composición.
 
