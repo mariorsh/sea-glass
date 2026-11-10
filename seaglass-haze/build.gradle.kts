@@ -11,6 +11,8 @@ plugins {
 }
 apply(from = rootProject.file("gradle/publishing.gradle.kts"))
 kotlin {
+    explicitApi()
+
     androidTarget { publishLibraryVariants("release"); compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
     jvm("desktop") { compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
     iosArm64(); iosSimulatorArm64()

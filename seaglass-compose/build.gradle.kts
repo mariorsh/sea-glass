@@ -13,6 +13,8 @@ plugins {
 apply(from = rootProject.file("gradle/publishing.gradle.kts"))
 
 kotlin {
+    explicitApi()
+
     androidTarget {
         publishLibraryVariants("release")
         compilerOptions { jvmTarget.set(JvmTarget.JVM_11) }
@@ -66,19 +68,4 @@ compose.resources {
     publicResClass = false
     packageOfResClass = "io.github.mariorsh.seaglass.compose.resources"
     generateResClass = always
-}
-
-publishing {
-    repositories {
-        // ./gradlew publishAllPublicationsToGitHubPackagesRepository
-        // Necesita GITHUB_ACTOR y GITHUB_TOKEN (con write:packages) y la URL de tu repo.
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/" + (System.getenv("GITHUB_REPOSITORY") ?: "TU_USUARIO/sea-glass"))
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
 }
