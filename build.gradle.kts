@@ -8,16 +8,22 @@ plugins {
     alias(libs.plugins.composeMultiplatform) apply false
     alias(libs.plugins.androidLibrary) apply false
     alias(libs.plugins.androidApplication) apply false
-    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.17.0"
-    id("org.jetbrains.dokka") version "1.9.20" apply false
-    id("com.vanniktech.maven.publish") version "0.34.0" apply false
+    alias(libs.plugins.binaryCompatibilityValidator)
+    alias(libs.plugins.dokka) apply false
+    alias(libs.plugins.vanniktechPublish) apply false
 }
 
 allprojects {
     group = providers.gradleProperty("GROUP").get()
     version = providers.gradleProperty("VERSION_NAME").get()
 }
-apiValidation { ignoredProjects.add("sample") }
+apiValidation {
+    ignoredProjects.add("sample")
+    @OptIn(kotlinx.validation.ExperimentalBCVApi::class)
+    klib {
+        enabled = true
+    }
+}
 
 // Release: ./gradlew publishAndReleaseToMavenCentral (see .github/workflows/release.yml).
 // Credentials/signing come from ORG_GRADLE_PROJECT_mavenCentralUsername, ...Password,
@@ -27,7 +33,7 @@ subprojects {
         extensions.configure<MavenPublishBaseExtension> {
             configure(
                 KotlinMultiplatform(
-                    javadocJar = JavadocJar.Dokka("dokkaHtml"),
+                    javadocJar = JavadocJar.Dokka("dokkaGeneratePublicationHtml"),
                     sourcesJar = true,
                     androidVariantsToPublish = listOf("release"),
                 )
