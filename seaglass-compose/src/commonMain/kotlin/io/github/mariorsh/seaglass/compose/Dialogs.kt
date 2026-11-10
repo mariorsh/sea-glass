@@ -27,8 +27,6 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
@@ -123,7 +121,7 @@ fun SgFullScreenDialog(
                 Modifier.fillMaxWidth().height(64.dp).padding(horizontal = 4.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                SgIconButton(onClick = onDismissRequest, icon = Icons.Filled.Close, contentDescription = closeContentDescription)
+                SgIconButton(onClick = onDismissRequest, icon = SgIcons.Close, contentDescription = closeContentDescription)
                 Text(title, style = MaterialTheme.typography.titleLarge, color = s.onSurface, modifier = Modifier.weight(1f).padding(start = 4.dp))
                 SgButton(confirmLabel, onClick = onConfirm, modifier = Modifier.padding(end = 8.dp))
             }
@@ -231,7 +229,7 @@ fun SgModalSideSheet(
     if (open) ModalEdgeSheet(onDismissRequest, Alignment.CenterEnd, title) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             Text(title, style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
-            SgIconButton(onClick = onDismissRequest, icon = Icons.Filled.Close, contentDescription = SeaGlassTheme.strings.close)
+            SgIconButton(onClick = onDismissRequest, icon = SgIcons.Close, contentDescription = SeaGlassTheme.strings.close)
         }
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp), content = sheetContent)
         if (actions != null) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), content = actions)

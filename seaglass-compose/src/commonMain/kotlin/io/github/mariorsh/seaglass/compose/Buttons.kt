@@ -26,9 +26,6 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
@@ -425,7 +422,7 @@ private fun ConnectedRow(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
-                if (sel) Icon(Icons.Filled.Check, null, Modifier.size(18.dp), tint = s.onSecondary)
+                if (sel) Icon(SgIcons.Check, null, Modifier.size(18.dp), tint = s.onSecondary)
                 Text(label, style = MaterialTheme.typography.labelLarge, color = if (sel) s.onSecondary else s.onSurface)
             }
         }
@@ -460,7 +457,7 @@ fun SgSegmentedButtons(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(6.dp),
             ) {
-                if (sel) Icon(Icons.Filled.Check, null, Modifier.size(18.dp), tint = s.onSecondaryContainer)
+                if (sel) Icon(SgIcons.Check, null, Modifier.size(18.dp), tint = s.onSecondaryContainer)
                 Text(
                     label,
                     style = MaterialTheme.typography.labelLarge,
@@ -529,7 +526,7 @@ fun SgSplitButton(
             contentAlignment = Alignment.Center,
         ) {
             Icon(
-                Icons.Filled.KeyboardArrowDown,
+                SgIcons.KeyboardArrowDown,
                 contentDescription = menuContentDescription,
                 tint = if (expanded) s.onPrimary else fg,
                 modifier = Modifier.rotate(rotation),

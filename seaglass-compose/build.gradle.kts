@@ -44,7 +44,6 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.animation)
             api(compose.material3)
-            api(libs.compose.material.icons.core)
             implementation(compose.components.resources)
         }
     }

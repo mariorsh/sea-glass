@@ -11,9 +11,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -147,7 +144,7 @@ fun SgFabMenu(
     onExpandedChange: (Boolean) -> Unit,
     items: List<SgFabMenuItem>,
     modifier: Modifier = Modifier,
-    icon: ImageVector = Icons.Filled.Add,
+    icon: ImageVector = SgIcons.Add,
     contentDescription: String = SeaGlassTheme.strings.create,
 ) {
     val s = MaterialTheme.colorScheme
@@ -200,7 +197,7 @@ fun SgFabMenu(
                 interactionSource = null,
                 fixedWidth = 56.dp,
             ) {
-                Icon(Icons.Filled.Close, SeaGlassTheme.strings.close, Modifier.size(22.dp))
+                Icon(SgIcons.Close, SeaGlassTheme.strings.close, Modifier.size(22.dp))
             }
         } else {
             SgFab(onClick = { onExpandedChange(true) }, icon = icon, contentDescription = contentDescription)

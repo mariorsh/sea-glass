@@ -24,8 +24,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
@@ -305,7 +303,7 @@ fun SgSnackbar(
             }
         }
         if (onDismiss != null) {
-            SgIconButton(onClick = onDismiss, icon = Icons.Filled.Close, contentDescription = SeaGlassTheme.strings.close, contentColor = s.inverseOnSurface)
+            SgIconButton(onClick = onDismiss, icon = SgIcons.Close, contentDescription = SeaGlassTheme.strings.close, contentColor = s.inverseOnSurface)
         }
     }
 }

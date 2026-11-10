@@ -20,8 +20,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -308,7 +306,7 @@ fun SgSwitch(
         modifier = modifier,
         enabled = enabled,
         thumbContent = if (checked && showIcon) {
-            { Icon(Icons.Filled.Check, null, Modifier.size(SwitchDefaults.IconSize)) }
+            { Icon(SgIcons.Check, null, Modifier.size(SwitchDefaults.IconSize)) }
         } else {
             null
         },

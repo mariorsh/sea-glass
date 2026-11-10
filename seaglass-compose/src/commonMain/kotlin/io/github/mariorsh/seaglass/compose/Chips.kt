@@ -17,9 +17,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
@@ -116,7 +113,7 @@ fun SgFilterChip(
         startPadding = if (selected) 8.dp else 14.dp, endPadding = if (trailingIcon != null) 8.dp else 14.dp,
         interaction = Modifier.toggleable(selected, source, LocalIndication.current, enabled = enabled, role = Role.Checkbox, onValueChange = onSelectedChange),
     ) {
-        if (selected) Icon(Icons.Filled.Check, null, Modifier.size(18.dp))
+        if (selected) Icon(SgIcons.Check, null, Modifier.size(18.dp))
         Text(
             label,
             style = MaterialTheme.typography.labelLarge.copy(fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium),
@@ -148,7 +145,7 @@ fun SgInputChip(
                 .clickable(role = Role.Button, onClickLabel = removeContentDescription, onClick = onRemove),
             contentAlignment = Alignment.Center,
         ) {
-            Icon(Icons.Filled.Close, removeContentDescription, Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            Icon(SgIcons.Close, removeContentDescription, Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }

@@ -19,6 +19,7 @@ kotlin {
         commonMain.dependencies {
             implementation(project(":seaglass-haze"))
             implementation(compose.components.resources)
+            implementation(libs.compose.material.icons.core)
         }
         androidMain.dependencies { implementation("androidx.activity:activity-compose:1.10.1") }
         val desktopMain by getting { dependencies { implementation(compose.desktop.currentOs) } }

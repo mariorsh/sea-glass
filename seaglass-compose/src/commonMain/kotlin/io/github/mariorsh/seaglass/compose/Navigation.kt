@@ -35,10 +35,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
@@ -160,7 +156,7 @@ fun SgSearchBar(
     placeholder: String,
     modifier: Modifier = Modifier,
     onSearch: (String) -> Unit = {},
-    leadingIcon: ImageVector = Icons.Filled.Search,
+    leadingIcon: ImageVector = SgIcons.Search,
     trailing: (@Composable () -> Unit)? = null,
 ) {
     val s = MaterialTheme.colorScheme
@@ -261,13 +257,13 @@ fun SgSearchView(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             if (docked) {
-                Icon(Icons.Filled.Search, null, tint = s.primary, modifier = Modifier.padding(horizontal = 12.dp))
+                Icon(SgIcons.Search, null, tint = s.primary, modifier = Modifier.padding(horizontal = 12.dp))
             } else {
-                SgIconButton(onClick = onBack, icon = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = SeaGlassTheme.strings.back)
+                SgIconButton(onClick = onBack, icon = SgIcons.ArrowBack, contentDescription = SeaGlassTheme.strings.back)
             }
             SearchInput(query, onQueryChange, placeholder, onSearch, Modifier.weight(1f))
             if (query.isNotEmpty()) {
-                SgIconButton(onClick = { onQueryChange("") }, icon = Icons.Filled.Close, contentDescription = SeaGlassTheme.strings.clearSearch)
+                SgIconButton(onClick = { onQueryChange("") }, icon = SgIcons.Close, contentDescription = SeaGlassTheme.strings.clearSearch)
             }
         }
         HorizontalDivider(color = s.outlineVariant)
