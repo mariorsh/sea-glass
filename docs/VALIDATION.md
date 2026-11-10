@@ -42,10 +42,12 @@ No packages were uploaded remotely. The generated static demo is under
 
 ## Automated gates
 
-Use JDK 17+, Android SDK 35. Public API dumps for Android and desktop live in each
-library's `api/` folder. `apiCheck` detects changes to these baselines; intentional
-changes require reviewing `apiDump` output. This is a 0.2 baseline, not a claim of
-binary compatibility with 0.1.1. Native/Wasm compilation is checked separately.
+Use JDK 17+, Android SDK 37. Public API dumps for Android and desktop (JVM) live in
+each library's `api/` folder; klib ABI dumps for the iOS and Wasm targets (opt-in,
+`ExperimentalBCVApi`) live alongside them. `apiCheck` detects changes to all of these
+baselines; intentional changes require reviewing `apiDump` output. This is a 0.3
+baseline, not a claim of binary compatibility with 0.2. Native/Wasm compilation is
+checked separately from ABI validation.
 
 ```sh
 ./gradlew :seaglass-compose:desktopTest apiCheck
@@ -69,7 +71,7 @@ center pixel of an Opaque surface with an explicitly translucent input color.
 
 Regenerate baselines with `apiDump` in a separate Gradle invocation before running
 `apiCheck`. Scheduling both together triggers Gradle's implicit-output dependency
-validation in Binary Compatibility Validator 0.17.0. CI only runs `apiCheck` and
+validation in Binary Compatibility Validator 0.18.2. CI only runs `apiCheck` and
 never regenerates baselines automatically.
 
 ## Device exploration prerequisite
