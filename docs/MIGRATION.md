@@ -1,3 +1,26 @@
+# 0.2.0 → 0.3.0
+
+Platform-only release; no theme, token or component changes. Three incompatible
+changes:
+
+- **Haze 2.** If your app uses Haze directly (not only through `seaglass-haze`),
+  add `dev.chrisbanes.haze:haze-blur:2.1.0` alongside `haze:2.1.0`: blur moved
+  out of the core `haze` artifact in Haze 2.0. The mutable `Modifier.hazeEffect {
+  blurEnabled = ...; backgroundColor = ...; blurRadius = ...; noiseFactor = ... }`
+  DSL is replaced by the typed `Modifier.hazeBlur(input = HazeInput.Sources(state),
+  style = HazeBlurStyle { blurEnabled(...); backgroundColor(...); blurRadius(...);
+  noiseFactor(...) })`, and `HazeDefaults.blurEnabled()` is replaced by
+  `HazeBlurDefaults.isBlurEnabledByDefault()`. `seaglass-haze`'s own public API
+  (`rememberHazeBackdrop`, `Modifier.seaGlassHazeSource`) is unchanged.
+- **No `iosX64`.** The library and sample no longer build for the Intel iOS
+  simulator target. `iosArm64` and `iosSimulatorArm64` (Apple Silicon simulator
+  and device) are unaffected.
+- **No transitive `material-icons-core`.** `seaglass-compose` no longer exposes
+  `org.jetbrains.compose.material:material-icons-core` as an `api` dependency
+  (it never used more than six glyphs from it). Apps that relied on getting
+  Material icons transitively through `seaglass-compose` must add
+  `material-icons-core` themselves.
+
 # 0.1.1 → 0.2.0
 
 Publication group and source packages move from `dev.seaglass` to

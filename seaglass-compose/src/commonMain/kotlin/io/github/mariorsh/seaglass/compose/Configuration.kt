@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Shape
 
 /** Null fields select the Arena/Noche preset. Nested themes start a fresh preset. */
 @Immutable
-data class SeaGlassThemeConfig(
+public data class SeaGlassThemeConfig(
     val colorScheme: ColorScheme? = null,
     val colors: SeaGlassColors? = null,
     val fonts: SeaGlassFonts? = null,
@@ -28,19 +28,19 @@ data class SeaGlassThemeConfig(
 
 /** Explicit override supplements Compose's platform duration scale. */
 @Immutable
-data class SeaGlassMotionConfig(val reduced: Boolean = false) {
-    fun <T> spatialFast(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.6f, 800f)
-    fun <T> spatialDefault(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.8f, 380f)
-    fun <T> spatialSlow(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.8f, 200f)
-    fun <T> effectsFast(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 3800f)
-    fun <T> effectsDefault(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 1600f)
-    fun <T> effectsSlow(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 800f)
+public data class SeaGlassMotionConfig(val reduced: Boolean = false) {
+    public fun <T> spatialFast(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.6f, 800f)
+    public fun <T> spatialDefault(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.8f, 380f)
+    public fun <T> spatialSlow(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(0.8f, 200f)
+    public fun <T> effectsFast(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 3800f)
+    public fun <T> effectsDefault(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 1600f)
+    public fun <T> effectsSlow(): FiniteAnimationSpec<T> = if (reduced) snap() else spring(1f, 800f)
 }
 
-enum class GlassSurfacePolicy { Auto, Blur, Opaque }
+public enum class GlassSurfacePolicy { Auto, Blur, Opaque }
 
 @Immutable
-data class SeaGlassSurfaceStyle(
+public data class SeaGlassSurfaceStyle(
     val policy: GlassSurfacePolicy = GlassSurfacePolicy.Auto,
     val forceFallback: Boolean = false,
     val opacityMultiplier: Float = 1f,
@@ -58,12 +58,12 @@ data class SeaGlassSurfaceStyle(
         require(highlightMultiplier.isFinite() && highlightMultiplier >= 0)
         require(shadowMultiplier.isFinite() && shadowMultiplier >= 0)
     }
-    fun usesBlur(available: Boolean): Boolean = available && !forceFallback && policy != GlassSurfacePolicy.Opaque
+    public fun usesBlur(available: Boolean): Boolean = available && !forceFallback && policy != GlassSurfacePolicy.Opaque
 }
 
 /** Override any label, or supply Spanish. Labels never depend on the device locale implicitly. */
 @Immutable
-data class SeaGlassStrings(
+public data class SeaGlassStrings(
     val close: String = "Close",
     val back: String = "Back",
     val cancel: String = "Cancel",
@@ -78,9 +78,9 @@ data class SeaGlassStrings(
     val confirm: String = "OK",
     val selectTime: String = "Select time",
 ) {
-    companion object {
-        val English = SeaGlassStrings()
-        val Spanish = SeaGlassStrings(
+    public companion object {
+        public val English: SeaGlassStrings = SeaGlassStrings()
+        public val Spanish: SeaGlassStrings = SeaGlassStrings(
             close = "Cerrar", back = "Volver", cancel = "Cancelar", moreOptions = "Más opciones",
             loading = "Cargando", clear = "Borrar", search = "Buscar", closeWithoutSaving = "Cerrar sin guardar",
             create = "Crear", remove = "Quitar", clearSearch = "Borrar búsqueda", confirm = "Aceptar", selectTime = "Selecciona la hora",

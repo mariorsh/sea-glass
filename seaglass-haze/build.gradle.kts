@@ -11,22 +11,25 @@ plugins {
 }
 apply(from = rootProject.file("gradle/publishing.gradle.kts"))
 kotlin {
+    explicitApi()
+
     androidTarget { publishLibraryVariants("release"); compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
     jvm("desktop") { compilerOptions { jvmTarget.set(JvmTarget.JVM_11) } }
-    iosX64(); iosArm64(); iosSimulatorArm64()
+    iosArm64(); iosSimulatorArm64()
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs { browser() }
     sourceSets {
         commonMain.dependencies {
             api(project(":seaglass-compose"))
-            api("dev.chrisbanes.haze:haze:1.5.3")
+            api(libs.haze)
+            api(libs.haze.blur)
             implementation(compose.foundation)
         }
     }
 }
 android {
     namespace = "io.github.mariorsh.seaglass.haze"
-    compileSdk = 35
-    defaultConfig { minSdk = 24 }
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    defaultConfig { minSdk = libs.versions.android.minSdk.get().toInt() }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
 }

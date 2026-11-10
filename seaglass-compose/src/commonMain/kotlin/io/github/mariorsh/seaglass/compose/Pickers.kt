@@ -30,7 +30,7 @@ import androidx.compose.ui.window.DialogProperties
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun sgDatePickerColors(): DatePickerColors {
+public fun sgDatePickerColors(): DatePickerColors {
     val s = MaterialTheme.colorScheme
     val c = SeaGlassTheme.colors
     return DatePickerDefaults.colors(
@@ -57,7 +57,7 @@ fun sgDatePickerColors(): DatePickerColors {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun sgTimePickerColors(): TimePickerColors {
+public fun sgTimePickerColors(): TimePickerColors {
     val s = MaterialTheme.colorScheme
     val c = SeaGlassTheme.colors
     return TimePickerDefaults.colors(
@@ -95,7 +95,7 @@ private fun PickerActions(confirmLabel: String, dismissLabel: String, onConfirm:
 /** Selector de fecha en línea (docked) sobre vidrio. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgDatePicker(
+public fun SgDatePicker(
     state: DatePickerState,
     modifier: Modifier = Modifier,
     showModeToggle: Boolean = true,
@@ -108,7 +108,7 @@ fun SgDatePicker(
 /** Selector de fecha modal. Crea el estado con `rememberDatePickerState()`. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgDatePickerDialog(
+public fun SgDatePickerDialog(
     state: DatePickerState,
     onDismissRequest: () -> Unit,
     onConfirm: () -> Unit,
@@ -126,7 +126,7 @@ fun SgDatePickerDialog(
 /** Selector de rango de fechas modal. Crea el estado con `rememberDateRangePickerState()`. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgDateRangePickerDialog(
+public fun SgDateRangePickerDialog(
     state: DateRangePickerState,
     onDismissRequest: () -> Unit,
     onConfirm: () -> Unit,
@@ -147,7 +147,7 @@ fun SgDateRangePickerDialog(
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SgTimePickerDialog(
+public fun SgTimePickerDialog(
     state: TimePickerState,
     onDismissRequest: () -> Unit,
     onConfirm: () -> Unit,

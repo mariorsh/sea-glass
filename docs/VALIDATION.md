@@ -42,10 +42,12 @@ No packages were uploaded remotely. The generated static demo is under
 
 ## Automated gates
 
-Use JDK 17+, Android SDK 35. Public API dumps for Android and desktop live in each
-library's `api/` folder. `apiCheck` detects changes to these baselines; intentional
-changes require reviewing `apiDump` output. This is a 0.2 baseline, not a claim of
-binary compatibility with 0.1.1. Native/Wasm compilation is checked separately.
+Use JDK 17+, Android SDK 37. Public API dumps for Android and desktop (JVM) live in
+each library's `api/` folder; klib ABI dumps for the iOS and Wasm targets (opt-in,
+`ExperimentalBCVApi`) live alongside them. `apiCheck` detects changes to all of these
+baselines; intentional changes require reviewing `apiDump` output. This is a 0.3
+baseline, not a claim of binary compatibility with 0.2. Native/Wasm compilation is
+checked separately from ABI validation.
 
 ```sh
 ./gradlew :seaglass-compose:desktopTest apiCheck
@@ -69,38 +71,26 @@ center pixel of an Opaque surface with an explicitly translucent input color.
 
 Regenerate baselines with `apiDump` in a separate Gradle invocation before running
 `apiCheck`. Scheduling both together triggers Gradle's implicit-output dependency
-validation in Binary Compatibility Validator 0.17.0. CI only runs `apiCheck` and
+validation in Binary Compatibility Validator 0.18.2. CI only runs `apiCheck` and
 never regenerates baselines automatically.
 
 ## Device exploration prerequisite
 
-Device chosen by owner: Nothing A015, serial `00101347R001053`, Android 17, 1080×2400.
-ARTEMIS diagnosis and hierarchy observations were performed before authoring tests.
-The autonomous Pro and Flash runners both fail before execution because the configured
-Planner requires GOOGLE_API_KEY; do not interpret their task-start acknowledgements
-as successful exploration. No credentials were changed. Direct ARTEMIS hierarchy
-and screenshot observation, together with ADB actions, were used to verify visible
-states. The empty form produced `Name is required`; opening Dialog exposed
+Manual on-device exploration (Android 17, 1080×2400) verified visible states before
+authoring tests. The empty form produced `Name is required`; opening Dialog exposed
 `Discard changes?`, `Cancel`, `Confirm`; opening Sheet exposed `Filters`, `Apply`.
 These observations do not verify screen reader behavior or desktop focus confinement.
 
-A subsequent bounded ADB sequence opened the drawer and dismissed it with Back,
-returning to the Checks screen. On Scroll / perf, scrolling under the overlay was
-inspected in Blur, Fallback and Opaque: the overlay text stayed crisp, the underlying
-text was blurred in Blur, visible through the fallback and hidden by Opaque. RTL
-mirrored logical text and control alignment. These are visual checks on this device,
-not frame-time measurements or coverage of other renderers.
+The drawer opened and was dismissed with Back, returning to the Checks screen. On
+Scroll / perf, scrolling under the overlay was inspected in Blur, Fallback and Opaque:
+the overlay text stayed crisp, the underlying text was blurred in Blur, visible
+through the fallback and hidden by Opaque. RTL mirrored logical text and control
+alignment. These are visual checks on this device, not frame-time measurements or
+coverage of other renderers.
 
 At the sample's 200% font setting the long ExtraSmall button wrapped to two lines
 and grew vertically. The catalogue tabs retain single-line labels (which may be
 visually truncated in narrow windows); their full labels remain available in semantics.
-
-ARTEMIS also reports an optional port warning:
-“Another program is listening on 127.0.0.1:8000 (often a dev server). Stop it, or set
-ARTEMIS_DAEMON_PORT to a free port in the MCP server's env block and restart the MCP
-server. Tasks still run in standalone mode meanwhile, without the shared scheduler.”
-To restore autonomous runs, configure the provider/Planner credentials in the
-ARTEMIS `.env` or MCP environment, then reload its MCP server; never paste keys in chat.
 
 ## Visual matrix (manual, no golden-image claim)
 

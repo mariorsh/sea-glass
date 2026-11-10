@@ -17,9 +17,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
@@ -81,7 +78,7 @@ private fun ChipFrame(
 
 /** Assist chip: acción contextual con icono en `primary`. [elevated] para usarlo sobre imágenes. */
 @Composable
-fun SgAssistChip(
+public fun SgAssistChip(
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -102,7 +99,7 @@ fun SgAssistChip(
 
 /** Filter chip: al seleccionarlo pasa a espuma con un check delante. */
 @Composable
-fun SgFilterChip(
+public fun SgFilterChip(
     label: String,
     selected: Boolean,
     onSelectedChange: (Boolean) -> Unit,
@@ -116,7 +113,7 @@ fun SgFilterChip(
         startPadding = if (selected) 8.dp else 14.dp, endPadding = if (trailingIcon != null) 8.dp else 14.dp,
         interaction = Modifier.toggleable(selected, source, LocalIndication.current, enabled = enabled, role = Role.Checkbox, onValueChange = onSelectedChange),
     ) {
-        if (selected) Icon(Icons.Filled.Check, null, Modifier.size(18.dp))
+        if (selected) Icon(SgIcons.Check, null, Modifier.size(18.dp))
         Text(
             label,
             style = MaterialTheme.typography.labelLarge.copy(fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Medium),
@@ -127,7 +124,7 @@ fun SgFilterChip(
 
 /** Input chip: un valor introducido por el usuario, con avatar opcional y botón para quitarlo. */
 @Composable
-fun SgInputChip(
+public fun SgInputChip(
     label: String,
     onRemove: () -> Unit,
     modifier: Modifier = Modifier,
@@ -148,14 +145,14 @@ fun SgInputChip(
                 .clickable(role = Role.Button, onClickLabel = removeContentDescription, onClick = onRemove),
             contentAlignment = Alignment.Center,
         ) {
-            Icon(Icons.Filled.Close, removeContentDescription, Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+            Icon(SgIcons.Close, removeContentDescription, Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         }
     }
 }
 
 /** Suggestion chip: una respuesta o búsqueda propuesta, solo texto. */
 @Composable
-fun SgSuggestionChip(
+public fun SgSuggestionChip(
     label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -173,7 +170,7 @@ fun SgSuggestionChip(
 
 /** Avatar circular con iniciales. */
 @Composable
-fun SgAvatar(
+public fun SgAvatar(
     initials: String,
     modifier: Modifier = Modifier,
     size: Dp = 24.dp,

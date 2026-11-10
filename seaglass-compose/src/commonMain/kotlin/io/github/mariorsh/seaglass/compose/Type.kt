@@ -3,6 +3,7 @@ package io.github.mariorsh.seaglass.compose
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -23,14 +24,14 @@ import org.jetbrains.compose.resources.Font
 
 /** Las tres familias de Sea Glass (incluidas en la librería, licencia OFL). */
 @Immutable
-data class SeaGlassFonts(
+public data class SeaGlassFonts(
     val display: FontFamily,
     val body: FontFamily,
     val mono: FontFamily,
 )
 
 @Composable
-fun rememberSeaGlassFonts(): SeaGlassFonts = SeaGlassFonts(
+public fun rememberSeaGlassFonts(): SeaGlassFonts = SeaGlassFonts(
     display = FontFamily(
         Font(Res.font.bricolage_regular, FontWeight.Normal),
         Font(Res.font.bricolage_semibold, FontWeight.SemiBold),
@@ -50,7 +51,7 @@ fun rememberSeaGlassFonts(): SeaGlassFonts = SeaGlassFonts(
 
 /** Estilos de Sea Glass que M3 no define: los Emphasized de Expressive y el caption mono. */
 @Immutable
-data class SeaGlassTypography(
+public data class SeaGlassTypography(
     val displayLargeEmphasized: TextStyle,
     val headlineMediumEmphasized: TextStyle,
     val titleLargeEmphasized: TextStyle,
@@ -59,7 +60,7 @@ data class SeaGlassTypography(
     val captionMono: TextStyle,
 )
 
-fun seaGlassTypography(fonts: SeaGlassFonts): Typography {
+public fun seaGlassTypography(fonts: SeaGlassFonts): Typography {
     fun display(size: Int, line: Int, weight: FontWeight = FontWeight.Normal, tracking: Double = -0.02) = TextStyle(
         fontFamily = fonts.display, fontWeight = weight, fontSize = size.sp, lineHeight = line.sp, letterSpacing = tracking.em,
     )
@@ -85,7 +86,7 @@ fun seaGlassTypography(fonts: SeaGlassFonts): Typography {
     )
 }
 
-fun seaGlassExtraTypography(fonts: SeaGlassFonts): SeaGlassTypography = SeaGlassTypography(
+public fun seaGlassExtraTypography(fonts: SeaGlassFonts): SeaGlassTypography = SeaGlassTypography(
     displayLargeEmphasized = TextStyle(fontFamily = fonts.display, fontWeight = FontWeight.Bold, fontSize = 57.sp, lineHeight = 64.sp, letterSpacing = (-0.02).em),
     headlineMediumEmphasized = TextStyle(fontFamily = fonts.display, fontWeight = FontWeight.Bold, fontSize = 28.sp, lineHeight = 36.sp),
     titleLargeEmphasized = TextStyle(fontFamily = fonts.body, fontWeight = FontWeight.Bold, fontSize = 22.sp, lineHeight = 28.sp),
@@ -93,6 +94,6 @@ fun seaGlassExtraTypography(fonts: SeaGlassFonts): SeaGlassTypography = SeaGlass
     captionMono = TextStyle(fontFamily = fonts.mono, fontWeight = FontWeight.Medium, fontSize = 11.sp, lineHeight = 16.sp, letterSpacing = 0.04.em),
 )
 
-val LocalSeaGlassTypography = staticCompositionLocalOf<SeaGlassTypography> {
+public val LocalSeaGlassTypography: ProvidableCompositionLocal<SeaGlassTypography> = staticCompositionLocalOf {
     error("SeaGlassTypography no está disponible: envuelve tu UI en SeaGlassTheme { }")
 }

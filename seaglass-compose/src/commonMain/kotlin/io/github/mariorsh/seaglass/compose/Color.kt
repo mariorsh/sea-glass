@@ -4,6 +4,7 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 
@@ -15,7 +16,7 @@ import androidx.compose.ui.graphics.Color
  * `MaterialTheme.colorScheme`; estos, con `SeaGlassTheme.colors`.
  */
 @Immutable
-data class SeaGlassColors(
+public data class SeaGlassColors(
     /** Fondo de pantalla: arena seca (claro) o agua nocturna (oscuro). */
     val ground: Color,
     /** Paneles esmerilados grandes. */
@@ -47,76 +48,76 @@ data class SeaGlassColors(
 )
 
 /** Valores literales de la paleta. Úsalos solo si necesitas un color fuera del tema. */
-object SeaGlassPalette {
+public object SeaGlassPalette {
     // Roles · Arena (claro)
-    val Primary = Color(0xFF2E6B63)
-    val OnPrimary = Color(0xFFF4FBF8)
-    val PrimaryContainer = Color(0xFFBFE3D6)
-    val OnPrimaryContainer = Color(0xFF0F3A33)
-    val Secondary = Color(0xFF33598A)
-    val OnSecondary = Color(0xFFF3F7FC)
-    val SecondaryContainer = Color(0xFFCCDBEE)
-    val OnSecondaryContainer = Color(0xFF12304F)
-    val Tertiary = Color(0xFF8C5A22)
-    val OnTertiary = Color(0xFFFFF7EC)
-    val TertiaryContainer = Color(0xFFF0D9B5)
-    val OnTertiaryContainer = Color(0xFF3D2508)
-    val Error = Color(0xFFA3402F)
-    val OnError = Color(0xFFFFF5F2)
-    val ErrorContainer = Color(0xFFF4D3CB)
-    val OnErrorContainer = Color(0xFF4A130A)
-    val Ground = Color(0xFFE8E4D8)
-    val SurfaceLowest = Color(0xFFFAF9F4)
-    val Surface = Color(0xFFF3F1EA)
-    val SurfaceLow = Color(0xFFEEECE4)
-    val SurfaceContainer = Color(0xFFE8E5DC)
-    val SurfaceHigh = Color(0xFFE1DED4)
-    val SurfaceHighest = Color(0xFFD9D6CB)
-    val Ink = Color(0xFF15303A)
-    val InkVariant = Color(0xFF3E5A60)
-    val InkMuted = Color(0xFF4A6468)
-    val Outline = Color(0xFF6F8C8A)
-    val InverseSurface = Color(0xEB22383D)
-    val InverseOnSurface = Color(0xFFE6F0EC)
-    val InversePrimary = Color(0xFF9FD3C2)
+    public val Primary: Color = Color(0xFF2E6B63)
+    public val OnPrimary: Color = Color(0xFFF4FBF8)
+    public val PrimaryContainer: Color = Color(0xFFBFE3D6)
+    public val OnPrimaryContainer: Color = Color(0xFF0F3A33)
+    public val Secondary: Color = Color(0xFF33598A)
+    public val OnSecondary: Color = Color(0xFFF3F7FC)
+    public val SecondaryContainer: Color = Color(0xFFCCDBEE)
+    public val OnSecondaryContainer: Color = Color(0xFF12304F)
+    public val Tertiary: Color = Color(0xFF8C5A22)
+    public val OnTertiary: Color = Color(0xFFFFF7EC)
+    public val TertiaryContainer: Color = Color(0xFFF0D9B5)
+    public val OnTertiaryContainer: Color = Color(0xFF3D2508)
+    public val Error: Color = Color(0xFFA3402F)
+    public val OnError: Color = Color(0xFFFFF5F2)
+    public val ErrorContainer: Color = Color(0xFFF4D3CB)
+    public val OnErrorContainer: Color = Color(0xFF4A130A)
+    public val Ground: Color = Color(0xFFE8E4D8)
+    public val SurfaceLowest: Color = Color(0xFFFAF9F4)
+    public val Surface: Color = Color(0xFFF3F1EA)
+    public val SurfaceLow: Color = Color(0xFFEEECE4)
+    public val SurfaceContainer: Color = Color(0xFFE8E5DC)
+    public val SurfaceHigh: Color = Color(0xFFE1DED4)
+    public val SurfaceHighest: Color = Color(0xFFD9D6CB)
+    public val Ink: Color = Color(0xFF15303A)
+    public val InkVariant: Color = Color(0xFF3E5A60)
+    public val InkMuted: Color = Color(0xFF4A6468)
+    public val Outline: Color = Color(0xFF6F8C8A)
+    public val InverseSurface: Color = Color(0xEB22383D)
+    public val InverseOnSurface: Color = Color(0xFFE6F0EC)
+    public val InversePrimary: Color = Color(0xFF9FD3C2)
 
     // Roles · Noche (oscuro)
-    val PrimaryDark = Color(0xFF8FD3C1)
-    val OnPrimaryDark = Color(0xFF00382F)
-    val PrimaryContainerDark = Color(0xFF1F5049)
-    val OnPrimaryContainerDark = Color(0xFFBFE3D6)
-    val SecondaryDark = Color(0xFFA9C7F0)
-    val OnSecondaryDark = Color(0xFF0E2E52)
-    val SecondaryContainerDark = Color(0xFF2A4A72)
-    val OnSecondaryContainerDark = Color(0xFFD3E3F8)
-    val TertiaryDark = Color(0xFFEBBE84)
-    val OnTertiaryDark = Color(0xFF462A05)
-    val TertiaryContainerDark = Color(0xFF5E4016)
-    val OnTertiaryContainerDark = Color(0xFFF6DDB8)
-    val ErrorDark = Color(0xFFFFB4A6)
-    val OnErrorDark = Color(0xFF5C1408)
-    val ErrorContainerDark = Color(0xFF7A2A1D)
-    val OnErrorContainerDark = Color(0xFFFFDAD3)
-    val GroundDark = Color(0xFF0C171B)
-    val SurfaceLowestDark = Color(0xFF0A1417)
-    val SurfaceDark = Color(0xFF111D21)
-    val SurfaceLowDark = Color(0xFF16242A)
-    val SurfaceContainerDark = Color(0xFF1A2A30)
-    val SurfaceHighDark = Color(0xFF203238)
-    val SurfaceHighestDark = Color(0xFF273A40)
-    val InkDark = Color(0xFFE3EEEA)
-    val InkVariantDark = Color(0xFFB4C8C6)
-    val InkMutedDark = Color(0xFF9DB3B1)
-    val OutlineDark = Color(0xFF7F9A98)
-    val InverseSurfaceDark = Color(0xF0DCE8E4)
-    val InverseOnSurfaceDark = Color(0xFF1C2F34)
-    val InversePrimaryDark = Color(0xFF276E61)
+    public val PrimaryDark: Color = Color(0xFF8FD3C1)
+    public val OnPrimaryDark: Color = Color(0xFF00382F)
+    public val PrimaryContainerDark: Color = Color(0xFF1F5049)
+    public val OnPrimaryContainerDark: Color = Color(0xFFBFE3D6)
+    public val SecondaryDark: Color = Color(0xFFA9C7F0)
+    public val OnSecondaryDark: Color = Color(0xFF0E2E52)
+    public val SecondaryContainerDark: Color = Color(0xFF2A4A72)
+    public val OnSecondaryContainerDark: Color = Color(0xFFD3E3F8)
+    public val TertiaryDark: Color = Color(0xFFEBBE84)
+    public val OnTertiaryDark: Color = Color(0xFF462A05)
+    public val TertiaryContainerDark: Color = Color(0xFF5E4016)
+    public val OnTertiaryContainerDark: Color = Color(0xFFF6DDB8)
+    public val ErrorDark: Color = Color(0xFFFFB4A6)
+    public val OnErrorDark: Color = Color(0xFF5C1408)
+    public val ErrorContainerDark: Color = Color(0xFF7A2A1D)
+    public val OnErrorContainerDark: Color = Color(0xFFFFDAD3)
+    public val GroundDark: Color = Color(0xFF0C171B)
+    public val SurfaceLowestDark: Color = Color(0xFF0A1417)
+    public val SurfaceDark: Color = Color(0xFF111D21)
+    public val SurfaceLowDark: Color = Color(0xFF16242A)
+    public val SurfaceContainerDark: Color = Color(0xFF1A2A30)
+    public val SurfaceHighDark: Color = Color(0xFF203238)
+    public val SurfaceHighestDark: Color = Color(0xFF273A40)
+    public val InkDark: Color = Color(0xFFE3EEEA)
+    public val InkVariantDark: Color = Color(0xFFB4C8C6)
+    public val InkMutedDark: Color = Color(0xFF9DB3B1)
+    public val OutlineDark: Color = Color(0xFF7F9A98)
+    public val InverseSurfaceDark: Color = Color(0xF0DCE8E4)
+    public val InverseOnSurfaceDark: Color = Color(0xFF1C2F34)
+    public val InversePrimaryDark: Color = Color(0xFF276E61)
 }
 
 private val InkRgb = Color(0xFF15303A)
 private val MintRgb = Color(0xFFBEE1D7)
 
-fun seaGlassLightColorScheme(): ColorScheme = with(SeaGlassPalette) {
+public fun seaGlassLightColorScheme(): ColorScheme = with(SeaGlassPalette) {
     lightColorScheme(
         primary = Primary,
         onPrimary = OnPrimary,
@@ -157,7 +158,7 @@ fun seaGlassLightColorScheme(): ColorScheme = with(SeaGlassPalette) {
     )
 }
 
-fun seaGlassDarkColorScheme(): ColorScheme = with(SeaGlassPalette) {
+public fun seaGlassDarkColorScheme(): ColorScheme = with(SeaGlassPalette) {
     darkColorScheme(
         primary = PrimaryDark,
         onPrimary = OnPrimaryDark,
@@ -198,7 +199,7 @@ fun seaGlassDarkColorScheme(): ColorScheme = with(SeaGlassPalette) {
     )
 }
 
-fun seaGlassLightColors(): SeaGlassColors = SeaGlassColors(
+public fun seaGlassLightColors(): SeaGlassColors = SeaGlassColors(
     ground = SeaGlassPalette.Ground,
     glass = Color(0xFFF7FAF7).copy(alpha = 0.58f),
     glassBar = Color(0xFFFAFCFA).copy(alpha = 0.78f),
@@ -221,7 +222,7 @@ fun seaGlassLightColors(): SeaGlassColors = SeaGlassColors(
     isDark = false,
 )
 
-fun seaGlassDarkColors(): SeaGlassColors = SeaGlassColors(
+public fun seaGlassDarkColors(): SeaGlassColors = SeaGlassColors(
     ground = SeaGlassPalette.GroundDark,
     glass = Color(0xFF18282E).copy(alpha = 0.58f),
     glassBar = Color(0xFF1C2E34).copy(alpha = 0.78f),
@@ -244,4 +245,5 @@ fun seaGlassDarkColors(): SeaGlassColors = SeaGlassColors(
     isDark = true,
 )
 
-val LocalSeaGlassColors = staticCompositionLocalOf { seaGlassLightColors() }
+public val LocalSeaGlassColors: ProvidableCompositionLocal<SeaGlassColors> =
+    staticCompositionLocalOf { seaGlassLightColors() }

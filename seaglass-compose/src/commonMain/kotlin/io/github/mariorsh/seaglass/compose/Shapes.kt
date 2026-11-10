@@ -21,7 +21,7 @@ import kotlin.math.sin
  * amplitud [amplitude] (fracción del radio). [sharpness] < 1 afila los lóbulos.
  * Con amplitude = 0 es un círculo, lo que permite animar entre formas pasando por él.
  */
-class SgPolarShape(
+public class SgPolarShape(
     private val lobes: Int,
     private val amplitude: Float,
     private val sharpness: Float = 1f,
@@ -55,18 +55,18 @@ class SgPolarShape(
 }
 
 /** Formas de la shape library de M3 Expressive, listas para `clip`, `background` o `border`. */
-object SeaGlassShapes {
-    val Circle: Shape = RoundedCornerShape(percent = 50)
-    val Pill: Shape = RoundedCornerShape(percent = 50)
-    val Cookie9: Shape = SgPolarShape(lobes = 9, amplitude = 0.09f)
-    val Cookie4: Shape = SgPolarShape(lobes = 4, amplitude = 0.12f)
-    val Clover4: Shape = SgPolarShape(lobes = 4, amplitude = 0.26f, sharpness = 0.6f, rotationDegrees = 45f)
-    val Sunny: Shape = SgPolarShape(lobes = 8, amplitude = 0.09f)
-    val Flower8: Shape = SgPolarShape(lobes = 8, amplitude = 0.2f, sharpness = 0.7f)
-    val SoftBurst: Shape = SgPolarShape(lobes = 12, amplitude = 0.12f, sharpness = 0.5f)
+public object SeaGlassShapes {
+    public val Circle: Shape = RoundedCornerShape(percent = 50)
+    public val Pill: Shape = RoundedCornerShape(percent = 50)
+    public val Cookie9: Shape = SgPolarShape(lobes = 9, amplitude = 0.09f)
+    public val Cookie4: Shape = SgPolarShape(lobes = 4, amplitude = 0.12f)
+    public val Clover4: Shape = SgPolarShape(lobes = 4, amplitude = 0.26f, sharpness = 0.6f, rotationDegrees = 45f)
+    public val Sunny: Shape = SgPolarShape(lobes = 8, amplitude = 0.09f)
+    public val Flower8: Shape = SgPolarShape(lobes = 8, amplitude = 0.2f, sharpness = 0.7f)
+    public val SoftBurst: Shape = SgPolarShape(lobes = 12, amplitude = 0.12f, sharpness = 0.5f)
 
     /** Arco: semicírculo arriba, base recta. */
-    val Arch: Shape = GenericShape { size, _ ->
+    public val Arch: Shape = GenericShape { size, _ ->
         val r = size.width / 2f
         moveTo(0f, size.height)
         lineTo(0f, r)
@@ -81,7 +81,7 @@ object SeaGlassShapes {
     }
 
     /** Gema hexagonal. */
-    val Gem: Shape = GenericShape { size, _ ->
+    public val Gem: Shape = GenericShape { size, _ ->
         moveTo(size.width / 2f, 0f)
         lineTo(size.width, size.height * 0.26f)
         lineTo(size.width, size.height * 0.74f)
@@ -91,7 +91,7 @@ object SeaGlassShapes {
         close()
     }
 
-    val all: List<Pair<String, Shape>> = listOf(
+    public val all: List<Pair<String, Shape>> = listOf(
         "Cookie 9" to Cookie9,
         "Trébol" to Clover4,
         "Sunny" to Sunny,

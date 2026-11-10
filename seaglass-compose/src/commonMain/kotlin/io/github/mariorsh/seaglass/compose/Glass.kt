@@ -2,6 +2,7 @@ package io.github.mariorsh.seaglass.compose
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.runtime.ProvidableCompositionLocal
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
@@ -17,7 +18,7 @@ import androidx.compose.ui.unit.dp
  * Niveles de elevación. En Sea Glass la elevación es escarcha: cada nivel sube la opacidad
  * del vidrio, el desenfoque de fondo (si hay un [GlassBackdrop]) y la sombra.
  */
-enum class GlassLevel(val blur: Dp, val shadow: Dp, val alpha: Float) {
+public enum class GlassLevel(public val blur: Dp, public val shadow: Dp, public val alpha: Float) {
     Level0(0.dp, 0.dp, 1f),
     Level1(6.dp, 1.dp, 0.55f),
     Level2(12.dp, 3.dp, 0.62f),
@@ -33,39 +34,39 @@ enum class GlassLevel(val blur: Dp, val shadow: Dp, val alpha: Float) {
  * The optional seaglass-haze module provides a capability-aware adapter. Legacy
  * SAM adapters need an explicit availability declaration; see the migration guide.
  */
-fun interface GlassBackdrop {
+public fun interface GlassBackdrop {
     /** Conservative default: installing an adapter does not prove blur is supported. */
-    val isBlurAvailable: Boolean get() = false
+    public val isBlurAvailable: Boolean get() = false
 
-    fun modifier(shape: Shape, level: GlassLevel): Modifier
+    public fun modifier(shape: Shape, level: GlassLevel): Modifier
 
-    companion object {
+    public companion object {
         /** Explicit support declaration for legacy SAM adapters. */
-        fun available(adapter: GlassBackdrop): GlassBackdrop = object : GlassBackdrop {
+        public fun available(adapter: GlassBackdrop): GlassBackdrop = object : GlassBackdrop {
             override val isBlurAvailable = true
             override fun modifier(shape: Shape, level: GlassLevel) = adapter.modifier(shape, level)
         }
-        val None: GlassBackdrop = object : GlassBackdrop {
+        public val None: GlassBackdrop = object : GlassBackdrop {
             override val isBlurAvailable = false
             override fun modifier(shape: Shape, level: GlassLevel) = Modifier
         }
     }
 }
 
-val LocalGlassBackdrop = staticCompositionLocalOf { GlassBackdrop.None }
+public val LocalGlassBackdrop: ProvidableCompositionLocal<GlassBackdrop> = staticCompositionLocalOf { GlassBackdrop.None }
 
 /**
  * Superficie de vidrio: sombra suave, relleno translúcido y borde de canto con la luz arriba.
  * Úsalo en todo lo que flota (barras, menús, dialogs, cards elevated).
  */
-fun Modifier.glass(
+public fun Modifier.glass(
     shape: Shape,
     level: GlassLevel = GlassLevel.Level3,
     color: Color? = null,
 ): Modifier = composed { glassSurface(shape, level, color, panel = false) }
 
 /** Panel retains its own fill and 10dp elevation, sharing surface policy with glass. */
-fun Modifier.glassPanel(shape: Shape? = null): Modifier = composed {
+public fun Modifier.glassPanel(shape: Shape? = null): Modifier = composed {
     val resolvedShape = shape ?: SeaGlassTheme.surfaces.panelShape
         ?: androidx.compose.foundation.shape.RoundedCornerShape(SeaGlassCorners.ExtraLargeIncreased)
     glassSurface(resolvedShape, GlassLevel.Level4, null, panel = true)
@@ -100,7 +101,7 @@ private fun Modifier.glassSurface(shape: Shape, level: GlassLevel, color: Color?
  * Relleno sólido de guijarro (botón filled, FAB primario, switch encendido, día seleccionado):
  * luz arriba, sombra interior abajo y sombra exterior.
  */
-fun Modifier.pebble(color: Color, shape: Shape, elevation: Dp = 4.dp): Modifier = composed {
+public fun Modifier.pebble(color: Color, shape: Shape, elevation: Dp = 4.dp): Modifier = composed {
     val c = SeaGlassTheme.colors
     val style = SeaGlassTheme.surfaces
     this
@@ -122,7 +123,7 @@ fun Modifier.pebble(color: Color, shape: Shape, elevation: Dp = 4.dp): Modifier 
 }
 
 /** Relleno tonal (containers): luz de canto sin sombra exterior. */
-fun Modifier.frost(color: Color, shape: Shape): Modifier = composed {
+public fun Modifier.frost(color: Color, shape: Shape): Modifier = composed {
     val c = SeaGlassTheme.colors
     val style = SeaGlassTheme.surfaces
     this
@@ -138,7 +139,7 @@ fun Modifier.frost(color: Color, shape: Shape): Modifier = composed {
 }
 
 /** Guijarro hundido: estado pulsado. */
-fun Modifier.pressedPebble(color: Color, shape: Shape): Modifier = this
+public fun Modifier.pressedPebble(color: Color, shape: Shape): Modifier = this
     .clip(shape)
     .background(color)
     .background(Brush.verticalGradient(0f to Color.Black.copy(alpha = 0.26f), 0.35f to Color.Transparent))

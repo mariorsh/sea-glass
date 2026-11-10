@@ -35,10 +35,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
@@ -65,14 +61,14 @@ private val BarShape = RoundedCornerShape(SeaGlassCorners.ExtraLarge)
 
 // ---------------------------------------------------------------- Top app bar
 
-enum class SgTopAppBarVariant { Small, CenterAligned, Medium, Large }
+public enum class SgTopAppBarVariant { Small, CenterAligned, Medium, Large }
 
 /**
  * Barra superior de vidrio flotante. Medium y Large son las flexibles de Expressive (con subtítulo).
  * Aplica tú los insets del sistema (por ejemplo `Modifier.statusBarsPadding()`) y el margen exterior.
  */
 @Composable
-fun SgTopAppBar(
+public fun SgTopAppBar(
     title: String,
     modifier: Modifier = Modifier,
     variant: SgTopAppBarVariant = SgTopAppBarVariant.Small,
@@ -154,13 +150,13 @@ fun SgTopAppBar(
 
 /** Píldora de búsqueda de espuma. Úsala sola o dentro de [SgSearchAppBar]. */
 @Composable
-fun SgSearchBar(
+public fun SgSearchBar(
     query: String,
     onQueryChange: (String) -> Unit,
     placeholder: String,
     modifier: Modifier = Modifier,
     onSearch: (String) -> Unit = {},
-    leadingIcon: ImageVector = Icons.Filled.Search,
+    leadingIcon: ImageVector = SgIcons.Search,
     trailing: (@Composable () -> Unit)? = null,
 ) {
     val s = MaterialTheme.colorScheme
@@ -207,7 +203,7 @@ private fun SearchInput(
 
 /** Search app bar de Expressive: menú, barra de búsqueda y avatar o acción. */
 @Composable
-fun SgSearchAppBar(
+public fun SgSearchAppBar(
     query: String,
     onQueryChange: (String) -> Unit,
     placeholder: String,
@@ -234,7 +230,7 @@ fun SgSearchAppBar(
  * [docked] (tablet, escritorio) es una lámina de vidrio bajo el campo.
  */
 @Composable
-fun SgSearchView(
+public fun SgSearchView(
     query: String,
     onQueryChange: (String) -> Unit,
     onBack: () -> Unit,
@@ -261,13 +257,13 @@ fun SgSearchView(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             if (docked) {
-                Icon(Icons.Filled.Search, null, tint = s.primary, modifier = Modifier.padding(horizontal = 12.dp))
+                Icon(SgIcons.Search, null, tint = s.primary, modifier = Modifier.padding(horizontal = 12.dp))
             } else {
-                SgIconButton(onClick = onBack, icon = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = SeaGlassTheme.strings.back)
+                SgIconButton(onClick = onBack, icon = SgIcons.ArrowBack, contentDescription = SeaGlassTheme.strings.back)
             }
             SearchInput(query, onQueryChange, placeholder, onSearch, Modifier.weight(1f))
             if (query.isNotEmpty()) {
-                SgIconButton(onClick = { onQueryChange("") }, icon = Icons.Filled.Close, contentDescription = SeaGlassTheme.strings.clearSearch)
+                SgIconButton(onClick = { onQueryChange("") }, icon = SgIcons.Close, contentDescription = SeaGlassTheme.strings.clearSearch)
             }
         }
         HorizontalDivider(color = s.outlineVariant)
@@ -284,13 +280,13 @@ fun SgSearchView(
 
 // ---------------------------------------------------------------- Toolbars
 
-enum class SgToolbarVariant { Docked, Floating, FloatingVibrant }
+public enum class SgToolbarVariant { Docked, Floating, FloatingVibrant }
 
 private val LocalToolbarVibrant = compositionLocalOf { false }
 
 /** Toolbars de Expressive: acciones de la tarea actual. Sustituyen a la bottom app bar. */
 @Composable
-fun SgToolbar(
+public fun SgToolbar(
     modifier: Modifier = Modifier,
     variant: SgToolbarVariant = SgToolbarVariant.Floating,
     vertical: Boolean = false,
@@ -326,7 +322,7 @@ fun SgToolbar(
 
 /** Acción de toolbar; [selected] la convierte en una píldora de espuma de 56×48. */
 @Composable
-fun SgToolbarItem(
+public fun SgToolbarItem(
     icon: ImageVector,
     contentDescription: String,
     onClick: () -> Unit,
@@ -372,7 +368,7 @@ fun SgToolbarItem(
 
 /** Badge: punto (texto nulo) o píldora con número. Pon `999+` a partir de 1.000. */
 @Composable
-fun SgBadge(text: String? = null, modifier: Modifier = Modifier) {
+public fun SgBadge(text: String? = null, modifier: Modifier = Modifier) {
     val s = MaterialTheme.colorScheme
     val ring = SeaGlassTheme.colors.ground
     if (text == null) {
@@ -397,7 +393,7 @@ fun SgBadge(text: String? = null, modifier: Modifier = Modifier) {
 
 /** Coloca un badge en la esquina superior derecha de un icono. */
 @Composable
-fun SgBadgedBox(
+public fun SgBadgedBox(
     badge: @Composable BoxScope.() -> Unit,
     modifier: Modifier = Modifier,
     content: @Composable BoxScope.() -> Unit,
@@ -417,7 +413,7 @@ private val LocalNavBarHorizontal = compositionLocalOf { false }
  * [horizontal] = true para ventanas medianas: icono y texto en línea.
  */
 @Composable
-fun SgNavigationBar(
+public fun SgNavigationBar(
     modifier: Modifier = Modifier,
     horizontal: Boolean = false,
     content: @Composable RowScope.() -> Unit,
@@ -438,7 +434,7 @@ fun SgNavigationBar(
 
 /** Destino de [SgNavigationBar]. [badge]: null sin badge, "" punto, "3" número. */
 @Composable
-fun RowScope.SgNavigationBarItem(
+public fun RowScope.SgNavigationBarItem(
     selected: Boolean,
     onClick: () -> Unit,
     icon: ImageVector,
@@ -518,7 +514,7 @@ private val LocalRailExpanded = compositionLocalOf { false }
  * destinos en píldora (en Expressive sustituye al navigation drawer).
  */
 @Composable
-fun SgNavigationRail(
+public fun SgNavigationRail(
     modifier: Modifier = Modifier,
     expanded: Boolean = false,
     header: (@Composable ColumnScope.() -> Unit)? = null,
@@ -546,7 +542,7 @@ fun SgNavigationRail(
 
 /** Destino de rail o de drawer. [badge] en el rail expandido/drawer se muestra como contador a la derecha. */
 @Composable
-fun SgNavigationRailItem(
+public fun SgNavigationRailItem(
     selected: Boolean,
     onClick: () -> Unit,
     icon: ImageVector,
@@ -623,7 +619,7 @@ fun SgNavigationRailItem(
  * [SgNavigationRail] con `expanded = true`. El diálogo de plataforma gestiona Atrás/Escape y aislamiento modal.
  */
 @Composable
-fun SgModalNavigationDrawer(
+public fun SgModalNavigationDrawer(
     open: Boolean,
     onDismiss: () -> Unit,
     drawerContent: @Composable ColumnScope.() -> Unit,
@@ -639,7 +635,7 @@ fun SgModalNavigationDrawer(
 }
 
 @Composable
-fun SgDrawerHeadline(text: String) {
+public fun SgDrawerHeadline(text: String) {
     Text(
         text,
         style = MaterialTheme.typography.titleLarge.copy(fontFamily = MaterialTheme.typography.headlineSmall.fontFamily),
@@ -649,7 +645,7 @@ fun SgDrawerHeadline(text: String) {
 }
 
 @Composable
-fun SgDrawerSectionLabel(text: String) {
+public fun SgDrawerSectionLabel(text: String) {
     Text(
         text.uppercase(),
         style = SeaGlassTheme.typography.captionMono,
@@ -660,13 +656,13 @@ fun SgDrawerSectionLabel(text: String) {
 
 // ---------------------------------------------------------------- Tabs
 
-data class SgTab(val label: String, val icon: ImageVector? = null)
+public data class SgTab(val label: String, val icon: ImageVector? = null)
 
-enum class SgTabVariant { Primary, Secondary }
+public enum class SgTabVariant { Primary, Secondary }
 
 /** Pestañas. Primary: píldora de 48×4 dp bajo el contenido. Secondary: subrayado de 2 dp a todo el ancho. */
 @Composable
-fun SgTabRow(
+public fun SgTabRow(
     tabs: List<SgTab>,
     selectedIndex: Int,
     onSelect: (Int) -> Unit,

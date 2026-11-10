@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.3.0-alpha01 — 2026-11-10
+
+Platform-only release: no theme, token, component or module changes.
+
+- Kotlin 2.4.21, Compose Multiplatform 1.12.2, AGP 9.5.1, Gradle 9.9.0, Dokka
+  2.3.0 (Gradle plugin v2) and Binary Compatibility Validator 0.18.2. AGP 9's
+  built-in Kotlin/new DSL temporarily bypassed via `android.builtInKotlin` /
+  `android.newDsl` to keep the current module layout; see
+  [DEVELOPMENT.md](docs/DEVELOPMENT.md).
+- Haze moves to 2.1.0: blur lives in the new `haze-blur` artifact and
+  `seaglass-haze` is rewritten on `Modifier.hazeBlur`/`HazeBlurStyle`.
+  `rememberHazeBackdrop(state, enabled)` and `Modifier.seaGlassHazeSource(state)`
+  keep their signatures and behavior.
+- Drop `iosX64`; `iosArm64` and `iosSimulatorArm64` remain.
+- Replace the `material-icons-core` dependency in `seaglass-compose` with six
+  internal `ImageVector`s (check, close, search, add, back arrow, dropdown
+  chevron); the sample depends on `material-icons-core` directly for its
+  broader icon set. No visible change to the gallery.
+- `seaglass-compose` and `seaglass-haze` build with `explicitApi()`.
+- Public ABI is now also validated for iOS/Wasm klibs, alongside the existing
+  JVM baselines.
+- Repo cleanup: remove `docs/PR.md`, drop device-serial/local-tooling notes
+  from `docs/VALIDATION.md`, remove the unused GitHub Packages publishing
+  block, add Dependabot for Gradle and GitHub Actions.
+
+See [migration](docs/MIGRATION.md) for the three breaking changes (Haze 2,
+no iosX64, no transitive material-icons-core).
+
 ## 0.2.0 — 2026-10-14
 
 - Move the Maven group and core Android namespace to `io.github.mariorsh.seaglass`.

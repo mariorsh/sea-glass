@@ -30,31 +30,31 @@ public final class io/github/mariorsh/seaglass/compose/ColorKt {
 public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$ContainersKt {
 	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$ContainersKt;
 	public fun <init> ()V
-	public final fun getLambda$1977070208$seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$1977070208$io_github_mariorsh_seaglass_seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$FabKt {
 	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$FabKt;
 	public fun <init> ()V
-	public final fun getLambda$2123591699$seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$2123591699$io_github_mariorsh_seaglass_seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$FeedbackKt {
 	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$FeedbackKt;
 	public fun <init> ()V
-	public final fun getLambda$544645599$seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$544645599$io_github_mariorsh_seaglass_seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$InputsKt {
 	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$InputsKt;
 	public fun <init> ()V
-	public final fun getLambda$1814103482$seaglass_compose_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda$1814103482$io_github_mariorsh_seaglass_seaglass_compose_release ()Lkotlin/jvm/functions/Function2;
 }
 
 public final class io/github/mariorsh/seaglass/compose/ComposableSingletons$NavigationKt {
 	public static final field INSTANCE Lio/github/mariorsh/seaglass/compose/ComposableSingletons$NavigationKt;
 	public fun <init> ()V
-	public final fun getLambda$846200593$seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$846200593$io_github_mariorsh_seaglass_seaglass_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class io/github/mariorsh/seaglass/compose/ContainersKt {
@@ -104,7 +104,7 @@ public final class io/github/mariorsh/seaglass/compose/FeedbackKt {
 
 public abstract interface class io/github/mariorsh/seaglass/compose/GlassBackdrop {
 	public static final field Companion Lio/github/mariorsh/seaglass/compose/GlassBackdrop$Companion;
-	public abstract fun isBlurAvailable ()Z
+	public fun isBlurAvailable ()Z
 	public abstract fun modifier (Landroidx/compose/ui/graphics/Shape;Lio/github/mariorsh/seaglass/compose/GlassLevel;)Landroidx/compose/ui/Modifier;
 }
 
@@ -445,6 +445,7 @@ public final class io/github/mariorsh/seaglass/compose/SeaGlassStrings$Companion
 
 public final class io/github/mariorsh/seaglass/compose/SeaGlassSurfaceStyle {
 	public static final field $stable I
+	public fun <init> ()V
 	public synthetic fun <init> (Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public synthetic fun <init> (Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;ZFFFFFFLandroidx/compose/ui/graphics/Shape;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun component1 ()Lio/github/mariorsh/seaglass/compose/GlassSurfacePolicy;
