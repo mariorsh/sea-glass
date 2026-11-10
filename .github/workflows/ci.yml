@@ -41,5 +41,5 @@ jobs:
           packages: platform-tools
       - uses: gradle/actions/setup-gradle@v4
       - run: chmod +x gradlew
-      - run: ./gradlew :sample:compileKotlinIosX64 :sample:compileKotlinIosArm64 :sample:compileKotlinIosSimulatorArm64 :sample:linkDebugFrameworkIosSimulatorArm64
+      - run: ./gradlew :sample:compileKotlinIosArm64 :sample:compileKotlinIosSimulatorArm64 :sample:linkDebugFrameworkIosSimulatorArm64
       - run: ./gradlew :seaglass-compose:publishAllPublicationsToStagingRepository :seaglass-haze:publishAllPublicationsToStagingRepository validateLocalPublication
