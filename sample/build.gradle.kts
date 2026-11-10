@@ -27,8 +27,14 @@ kotlin {
 }
 android {
     namespace = "io.github.mariorsh.seaglass.sample"
-    compileSdk = 35
-    defaultConfig { applicationId = "io.github.mariorsh.seaglass.sample"; minSdk = 24; targetSdk = 35; versionCode = 2; versionName = project.version.toString() }
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    defaultConfig {
+        applicationId = "io.github.mariorsh.seaglass.sample"
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.compileSdk.get().toInt()
+        versionCode = 2
+        versionName = project.version.toString()
+    }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
 }
 compose.desktop { application { mainClass = "io.github.mariorsh.seaglass.sample.MainKt" } }
